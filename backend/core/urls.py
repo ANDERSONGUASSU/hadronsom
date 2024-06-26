@@ -18,5 +18,5 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('supersecret/', admin.site.urls),
+    path("supersecret/", admin.site.urls),
 ]

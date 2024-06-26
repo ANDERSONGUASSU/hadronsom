@@ -46,16 +46,16 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Hádron</a>
+          <a className="btn btn-ghost text-xl text-color">Hádron</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <a className="text-color">Item 1</a>
             </li>
             <li>
               <details>
-                <summary>Parent</summary>
+                <summary className="text-color">Parent</summary>
                 <ul className="p-2">
                   <li>
                     <a>Submenu 1</a>
@@ -67,29 +67,23 @@ const Header = () => {
               </details>
             </li>
             <li>
-              <a>Item 3</a>
+              <a className="text-color">Item 3</a>
             </li>
           </ul>
         </div>
         <div className="navbar-end space-x-4">
           <a href="https://facebook.com" className="text-2xl">
-            <FaFacebook />
+            <FaFacebook className="text-color" />
           </a>
           <a href="https://instagram.com" className="text-2xl">
-            <FaInstagram />
+            <FaInstagram className="text-color" />
           </a>
           <a href="https://whatsapp.com" className="text-2xl">
-            <FaWhatsapp />
+            <FaWhatsapp className="text-color" />
           </a>
         </div>
       </div>
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-        }}
-      >
+      <div className="hero min-h-screen hero-img">
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">

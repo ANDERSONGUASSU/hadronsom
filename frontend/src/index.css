@@ -1,5 +1,11 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "assets/css/variables.css";
 
-
+.text-color{
+    color: var(--color-secondary-content)
+}
+.hero-img {
+    background-image: url('./assets/img/igreja.jpg');
+  }
