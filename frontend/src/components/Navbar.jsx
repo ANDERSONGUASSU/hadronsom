@@ -23,9 +23,6 @@ const Navbar = () => {
             <a className="text-color">Sobre nós</a>
           </li>
           <li>
-            <a className="text-color">Sobre nós</a>
-          </li>
-          <li>
             <a className="text-color">Contato</a>
           </li>
         </ul>

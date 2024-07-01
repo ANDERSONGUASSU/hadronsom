@@ -3,9 +3,16 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
-.text-color{
+.text-color {
     color: var(--color-secondary-content)
 }
-.hero-img {
-    background-image: url('./assets/img/igreja.jpg');
-  }
+
+.typed-fade-out {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.carousel-transf {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
