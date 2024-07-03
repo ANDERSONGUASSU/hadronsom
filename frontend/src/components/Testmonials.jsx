@@ -80,7 +80,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gradient-to-b from-red-600 to-black relative overflow-hidden">
+    <section className="py-12 bg-gradient-to-b from-red-600 to-slate-900 relative overflow-hidden">
       <img
         src="../../assets/img/shapes/pattern-lines.svg"
         className="absolute opacity-20 h-full top-0 hidden md:block"
@@ -97,7 +97,7 @@ const Testimonials = () => {
         </div>
         <div ref={carouselRef} className="carousel w-full mt-12 flex overflow-hidden">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="carousel-item flex-none w-1/3">
+            <div key={index} className="carousel-item flex-none md:w-1/3 sm:w-full ssm:w-11/12">
               <div className="card bg-base-100 shadow-xl mx-2 w-full">
                 <div className="flex justify-center mt-8 z-10">
                   <div className="relative">

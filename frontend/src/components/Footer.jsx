@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-neutral text-base-content rounded p-10">
+    <footer className="footer footer-center bg-slate-900 text-base-content rounded p-10">
       <nav className="grid grid-flow-col gap-4 text-base-100">
         <a className="link link-hover">Home</a>
         <a className="link link-hover">Produtos & Serviços</a>

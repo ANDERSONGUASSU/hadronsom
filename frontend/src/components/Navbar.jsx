@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import logo from "assets/img/logo.avif";
 
 const Navbar = () => {
+  const [navbarBg, setNavbarBg] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setNavbarBg(true);
+    } else {
+      setNavbarBg(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="navbar bg-transparent top-0 w-full fixed">
+    <div
+      className={`navbar top-0 w-full fixed z-50 transition-all duration-300 ${
+        navbarBg ? "bg-slate-900 shadow-lg" : "bg-transparent z-50"
+      }`}
+    >
       <div className="navbar-start">
         <DropdownMenu />
-        <a className="btn btn-ghost text-xl text-color">Hádron</a>
+        <a className="btn btn-ghost text-xl text-color">
+          <img className="h-16 -mt-2" src={logo} alt="logo" />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -69,7 +93,6 @@ const DropdownMenu = () => {
           <a>Home</a>
           <a>Produto & Serviços</a>
           <a>Nossos pacotes</a>
-          <a>Sobre nós</a>
           <a>Sobre nós</a>
           <a>Contato</a>
         </li>
