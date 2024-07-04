@@ -1,7 +1,22 @@
 import React from "react";
-import { FaCheckCircle, FaUserCog, FaSyncAlt, FaUsers, FaShareAlt, FaPhone } from "react-icons/fa";
+import {
+  FaVolumeUp,
+  FaPaintBrush,
+  FaCog,
+  FaMusic,
+  FaSlidersH,
+  FaVolumeDown,
+  FaTools,
+  FaMapMarkedAlt,
+  FaShieldAlt,
+  FaBoxOpen,
+  FaCut,
+  FaVolumeMute,
+} from "react-icons/fa";
 import caixasDeSom from "assets/img/caixasDeSom.png";
 import pacotes from "assets/img/pacotes.png";
+import manutencao from "assets/img/manutencao.png";
+import fabricacao from "assets/img/fabricacao.png";
 import { motion } from "framer-motion";
 import Card from "./Card";
 import FeatureItem from "./FeatureItem";
@@ -9,41 +24,84 @@ import FeatureItem from "./FeatureItem";
 const Features = () => {
   const featureItems1 = [
     {
-      icon: FaPhone,
-      title: "Listen to Social Conversations",
+      icon: FaVolumeUp,
+      title: "Som Imersivo",
       description:
-        "Gain access to the demographics, psychographics, and location of unique people who talk about your brand.",
+        "Desfrute de uma experiência sonora envolvente com a qualidade superior das nossas caixas de som Hádron, perfeitas para qualquer ambiente.",
     },
     {
-      icon: FaCheckCircle,
-      title: "Performance Analyze",
+      icon: FaPaintBrush,
+      title: "Design Elegante",
       description:
-        "Unify data from Facebook, Instagram, Twitter, LinkedIn, and Youtube to gain rich insights from easy-to-use reports.",
+        "Nossas caixas de som combinam um design moderno e sofisticado com uma acústica excepcional, se integrando harmoniosamente ao seu espaço.",
     },
     {
-      icon: FaUserCog,
-      title: "Social Conversions",
+      icon: FaCog,
+      title: "Tecnologia de Ponta",
       description:
-        "Track actions taken on your website that originated from social, and understand the impact on your bottom line.",
+        "Desfrute da mais avançada tecnologia sonora com nossas caixas de som, que oferecem clareza e potência para qualquer tipo de ambiente.",
     },
   ];
 
   const featureItems2 = [
     {
-      icon: FaSyncAlt,
-      title: "Always In Sync",
-      description: "No matter where you are, Trello stays in sync across all of your devices.",
-    },
-    {
-      icon: FaUsers,
-      title: "Work With Any Team",
+      icon: FaMusic,
+      title: "Qualidade Sonora",
       description:
-        "Whether it’s for work or even the next family vacation, Trello helps your team.",
+        "Nossos kits de sonorização oferecem caixas de som de alta qualidade, proporcionando uma experiência auditiva imersiva.",
     },
     {
-      icon: FaShareAlt,
-      title: "A Productivity Platform",
-      description: "Integrate the apps your team already uses directly into your workflow.",
+      icon: FaSlidersH,
+      title: "Controle Total",
+      description:
+        "Inclui uma mesa de som avançada que permite ajustes precisos para atender a qualquer necessidade de som.",
+    },
+    {
+      icon: FaVolumeDown,
+      title: "Potência de Subwoofer",
+      description:
+        "Equipado com subwoofers poderosos, nossos kits garantem graves profundos e impactantes para qualquer evento.",
+    },
+  ];
+  const featureItems3 = [
+    {
+      icon: FaTools,
+      title: "Equipe Qualificada",
+      description:
+        "Nossa equipe de manutenção é altamente qualificada, garantindo serviços de reparo e otimização com excelência.",
+    },
+    {
+      icon: FaMapMarkedAlt,
+      title: "Visita Técnica",
+      description:
+        "Oferecemos visita técnica em todos os municípios do estado de São Paulo, proporcionando conveniência e suporte local.",
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Serviço Confiável",
+      description:
+        "Nossos serviços de manutenção são confiáveis e garantem o melhor desempenho de seus equipamentos de som.",
+    },
+  ];
+
+  const featureItems4 = [
+    {
+      icon: FaBoxOpen,
+      title: "Fabricação de Caixas de Som",
+      description:
+        "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
+    },
+    {
+      icon: FaCut,
+      title: "Recortes em MDF",
+      description:
+        "Oferecemos serviços de recorte em MDF, perfeitos para a construção de caixas de som e outros projetos acústicos.",
+    },
+    {
+      icon: FaVolumeMute,
+      title: "Isolamento Acústico",
+      description:
+        "Especializamos em isolamento acústico, garantindo um ambiente livre de ruídos indesejados e melhor qualidade sonora.",
     },
   ];
 
@@ -94,9 +152,10 @@ const Features = () => {
             ))}
           </div>
           <Card title="Kit sonorização" imageSrc={pacotes} backgroundText="KIT SONORIZAÇÃO" />
-          <Card title="Caixas de som" imageSrc={caixasDeSom} backgroundText="EQUIPAMENTOS" />
+
+          <Card title="Manutenção" imageSrc={manutencao} backgroundText="MANUTENÇAO" />
           <div className="p-4 flex flex-col justify-center space-y-6">
-            {featureItems1.map((item, index) => (
+            {featureItems3.map((item, index) => (
               <FeatureItem
                 key={index}
                 icon={item.icon}
@@ -107,7 +166,7 @@ const Features = () => {
           </div>
 
           <div className="p-4 flex flex-col justify-center space-y-6">
-            {featureItems2.map((item, index) => (
+            {featureItems4.map((item, index) => (
               <FeatureItem
                 key={index}
                 icon={item.icon}
@@ -116,7 +175,11 @@ const Features = () => {
               />
             ))}
           </div>
-          <Card title="Kit sonorização" imageSrc={pacotes} backgroundText="KIT SONORIZAÇÃO" />
+          <Card
+            title="Fabricação & serviços"
+            imageSrc={fabricacao}
+            backgroundText="FABRICAÇÃO & SERVIÇOS"
+          />
         </motion.div>
       </div>
     </section>

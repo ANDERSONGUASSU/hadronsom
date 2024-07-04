@@ -10,7 +10,7 @@ const cardVariants = {
 const Card = ({ title, imageSrc, backgroundText }) => {
   return (
     <motion.div
-      className="card relative text-center shadow-lg bg-gradient-to-b from-red-600 to-red-100 p-4"
+      className="card relative text-center shadow-lg bg-gradient-to-b from-red-600 to-red-200 p-4"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"

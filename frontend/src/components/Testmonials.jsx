@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { ImQuotesRight } from "react-icons/im";
 import cl1 from "../assets/img/cliente-1.jpg";
 import cl2 from "../assets/img/cliente-2.png";
@@ -43,40 +45,16 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const carouselRef = useRef(null);
-  const indexRef = useRef(0);
-
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      const nextIndex = (indexRef.current + 1) % testimonials.length;
-      const nextItem = carouselRef.current.children[nextIndex];
-
-      if (nextItem) {
-        const carousel = carouselRef.current;
-        const nextItemOffset = nextItem.offsetLeft - carousel.scrollLeft;
-        carousel.scrollBy({ left: nextItemOffset, behavior: "smooth" });
-        indexRef.current = nextIndex;
-      }
-    }
-  };
-
-  const scrollLeft = () => {
-    if (carouselRef.current) {
-      const prevIndex = (indexRef.current - 1 + testimonials.length) % testimonials.length;
-      const prevItem = carouselRef.current.children[prevIndex];
-
-      if (prevItem) {
-        const carousel = carouselRef.current;
-        const prevItemOffset = prevItem.offsetLeft - carousel.scrollLeft;
-        carousel.scrollBy({ left: prevItemOffset, behavior: "smooth" });
-        indexRef.current = prevIndex;
-      }
-    }
-  };
+  const swiperRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(scrollRight, 5000); // Move to the right every 5 seconds
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    const interval = setInterval(() => {
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slideNext();
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -95,43 +73,63 @@ const Testimonials = () => {
             Confira o que alguns deles têm a dizer sobre nós.
           </h5>
         </div>
-        <div ref={carouselRef} className="carousel w-full mt-12 flex overflow-hidden">
+        <Swiper
+          ref={swiperRef}
+          spaceBetween={30}
+          slidesPerView={3}
+          loop={true}
+          autoplay={{ delay: 5000 }}
+          className="mt-12"
+          breakpoints={{
+            // Configurações responsivas
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="carousel-item flex-none md:w-1/3 sm:w-full ssm:w-11/12">
-              <div className="card bg-base-100 shadow-xl mx-2 w-full">
-                <div className="flex justify-center mt-8 z-10">
-                  <div className="relative">
-                    <div className="avatar placeholder rounded-full w-32 h-32 bg-gray-300">
-                      <img
-                        className="w-full h-full rounded-full shadow-lg"
-                        src={testimonial.image}
-                        alt="avatar"
-                      />
+            <SwiperSlide key={index}>
+              <div className="carousel-item flex-none w-full">
+                <div className="card bg-base-100 shadow-xl mx-2 w-full">
+                  <div className="flex justify-center mt-8 z-10">
+                    <div className="relative">
+                      <div className="avatar placeholder rounded-full w-32 h-32 bg-gray-300">
+                        <img
+                          className="w-full h-full rounded-full shadow-lg"
+                          src={testimonial.image}
+                          alt="avatar"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="card-body text-center mt-8">
+                    <h4 className="card-title flex justify-center mb-0">{testimonial.name}</h4>
+                    <p>{testimonial.username}</p>
+                    <p className="mt-2 max-w-30">{testimonial.text}</p>
+                  </div>
+                  <div className="card-footer">
+                    <div className="flex justify-center">
+                      <ImQuotesRight className="text-red-600 text-9xl" />
                     </div>
                   </div>
                 </div>
-                <div className="card-body text-center mt-8">
-                  <h4 className="card-title flex justify-center mb-0">{testimonial.name}</h4>
-                  <p>{testimonial.username}</p>
-                  <p className="mt-2 max-w-30">{testimonial.text}</p>
-                </div>
-                <div className="card-footer">
-                  <div className="flex justify-center">
-                    <ImQuotesRight className="text-red-600 text-9xl" />
-                  </div>
-                </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
-        <div className="flex justify-between mt-4">
-          <button className="btn btn-circle" onClick={scrollLeft}>
-            ❮
-          </button>
-          <button className="btn btn-circle" onClick={scrollRight}>
-            ❯
-          </button>
-        </div>
+        </Swiper>
       </div>
     </section>
   );

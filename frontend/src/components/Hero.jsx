@@ -19,7 +19,7 @@ const Hero = () => {
   }, []);
   return (
     <div className="hero min-h-screen" style={{ backgroundImage: `url(${igrejaImage})` }}>
-      <div className="hero-overlay bg-gradient-to-b from-transparent to-red-600 opacity-100"></div>
+      <div className="hero-overlay bg-gradient-to-b from-transparent to-base-300 opacity-100"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-xl">
           <h1 className="text-white text-5xl font-bold">
