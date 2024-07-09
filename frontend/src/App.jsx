@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <>
-      <Router>
+      <Router basename="/hadronsom">
         <Header />
         <main className="py-3">
           <Routes>
