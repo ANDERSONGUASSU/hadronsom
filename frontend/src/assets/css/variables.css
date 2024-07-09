@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #0076ff;
+    --color-primary: #e91f1f;
     --color-primary-content: #000516;
     --color-secondary: #365f00;
     --color-secondary-content: #d4decd;
@@ -8,8 +8,8 @@
     --color-neutral: #060400;
     --color-neutral-content: #c5c4c1;
     --color-base-100: #effff8;
-    --color-base-200: #d0ded8;
-    --color-base-300: #b1beb8;
+    --color-base-200: #eecdcd;
+    --color-base-300: #be5555;
     --color-base-content: #141615;
     --color-info: #00abdf;
     --color-info-content: #000b12;

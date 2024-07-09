@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/bundle";
 import { ImQuotesRight } from "react-icons/im";
 import cl1 from "../assets/img/cliente-1.jpg";
 import cl2 from "../assets/img/cliente-2.png";
@@ -58,7 +59,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gradient-to-b from-red-600 to-slate-900 relative overflow-hidden">
+    <section className="py-12 bg-gradient-to-b from-red-600 to-primary-content relative overflow-hidden">
       <img
         src="../../assets/img/shapes/pattern-lines.svg"
         className="absolute opacity-20 h-full top-0 hidden md:block"
@@ -77,6 +78,7 @@ const Testimonials = () => {
           ref={swiperRef}
           spaceBetween={30}
           slidesPerView={3}
+          centeredSlides={true}
           loop={true}
           autoplay={{ delay: 5000 }}
           className="mt-12"
@@ -101,7 +103,7 @@ const Testimonials = () => {
           }}
         >
           {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide className="swiper-slide mt-14 mb-14" key={index}>
               <div className="carousel-item flex-none w-full">
                 <div className="card bg-base-100 shadow-xl mx-2 w-full">
                   <div className="flex justify-center mt-8 z-10">
@@ -118,7 +120,7 @@ const Testimonials = () => {
                   <div className="card-body text-center mt-8">
                     <h4 className="card-title flex justify-center mb-0">{testimonial.name}</h4>
                     <p>{testimonial.username}</p>
-                    <p className="mt-2 max-w-30">{testimonial.text}</p>
+                    <p className="mt-2 max-w-30 min-h-12">{testimonial.text}</p>
                   </div>
                   <div className="card-footer">
                     <div className="flex justify-center">

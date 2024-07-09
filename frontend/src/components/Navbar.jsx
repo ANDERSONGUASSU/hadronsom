@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div
       className={`navbar top-0 w-full fixed z-50 transition-all duration-300 ${
-        navbarBg ? "bg-slate-900 shadow-lg" : "bg-transparent z-50"
+        navbarBg ? "bg-primary-content shadow-lg" : "bg-transparent z-50"
       }`}
     >
       <div className="navbar-start">

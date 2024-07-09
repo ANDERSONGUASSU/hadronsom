@@ -80,53 +80,5 @@ h4 {
   margin: 0;
 }
 
-.testimonial-item p {
-  font-style: italic;
-  margin: 0 auto 15px auto;
-}
 
-.swiper-wrapper {
-  height: auto;
-}
-
-.swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-.swiper-slide {
-  opacity: 0.3;
-}
-
-@media (max-width: 1199px) {
-  .swiper-slide-active {
-    opacity: 1;
-  }
-
-  .swiper-pagination {
-    margin-top: 0;
-  }
-
-  .testimonial-item {
-    margin: 40px 20px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .swiper-slide-next {
-    opacity: 1;
-    transform: scale(1.12);
-  }
-}
 

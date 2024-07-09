@@ -19,12 +19,12 @@ const Hero = () => {
   }, []);
   return (
     <div className="hero min-h-screen" style={{ backgroundImage: `url(${igrejaImage})` }}>
-      <div className="hero-overlay bg-gradient-to-b from-transparent to-base-300 opacity-100"></div>
+      <div className="hero-overlay bg-gradient-to-b from-transparent to-primary-content opacity-100"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-xl">
-          <h1 className="text-white text-5xl font-bold">
+          <h1 className="text-base-100 text-5xl font-bold">
             A solução para o seu som é <br></br>
-            <span className="text-white text-5xl font-bold" id="typed"></span>
+            <span className="text-base-100 text-5xl font-bold" id="typed"></span>
             <br></br>
           </h1>
           <div id="typed-strings" className="hidden">
@@ -32,7 +32,7 @@ const Hero = () => {
             <h1>inovação?</h1>
             <h1>Hádron Som!</h1>
           </div>
-          <p className="text-white mt-4 text-xl font-medium">
+          <p className="text-base-100 mt-4 text-xl font-medium">
             Transforme qualquer espaço com as caixas de som Hádron. <br />A combinação perfeita
             entre estilo e qualidade sonora que se adapta a todos os ambientes.
           </p>

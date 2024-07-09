@@ -10,19 +10,19 @@ const cardVariants = {
 const Card = ({ title, imageSrc, backgroundText }) => {
   return (
     <motion.div
-      className="card relative text-center shadow-lg bg-gradient-to-b from-red-600 to-red-200 p-4"
+      className="card relative text-center shadow-lg bg-gradient-to-b from-primary to-base-100 p-4"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
     >
       <div className="flex">
-        <div className="w-1/6 flex flex-col justify-between text-white opacity-10">
+        <div className="w-1/6 flex flex-col justify-between text-primary-content opacity-10">
           <div className="flex-1 flex items-center justify-center">
             <span className="text-6xl vertical-text">{backgroundText}</span>
           </div>
         </div>
-        <div className="flex-1 flex flex-col justify-between items-center relative z-10 text-white py-9">
+        <div className="flex-1 flex flex-col justify-between items-center relative z-10 text-base-100 py-9">
           <h2 className="text-4xl">{title}</h2>
           <div className="flex-1 flex items-center justify-center">
             <img src={imageSrc} alt={title} className="w-96 h-96" />

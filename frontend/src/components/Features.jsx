@@ -20,6 +20,8 @@ import fabricacao from "assets/img/fabricacao.png";
 import { motion } from "framer-motion";
 import Card from "./Card";
 import FeatureItem from "./FeatureItem";
+import AboutSection from "./AboutSection";
+import ProductsServicesSection from "./ProductsServicesSection";
 
 const Features = () => {
   const featureItems1 = [
@@ -108,13 +110,8 @@ const Features = () => {
   return (
     <section className="py-5 -mt-36 relative z-20">
       <div className="container mx-auto shadow-slate-600 shadow-md bg-base-100 rounded-lg">
-        <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold text-red-500">Conheça a Hádron</h3>
-          <p className="text-lg">
-            Conheça os serviços e produtos que a <strong>Hádron</strong> oferece para transformar o
-            seu ambiente.
-          </p>
-        </div>
+        <AboutSection />
+        <ProductsServicesSection />
 
         <motion.div
           className="grid md:grid-cols-2 gap-4 mt-5 ml-2 mr-2"
