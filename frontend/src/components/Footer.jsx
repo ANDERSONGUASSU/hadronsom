@@ -13,13 +13,16 @@ const Footer = () => {
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <a href="https://facebook.com" className="text-2xl">
+          <a href="https://facebook.com/hadrondivisaodeaudio" className="text-2xl">
             <FaFacebook className="text-base-100" />
           </a>
-          <a href="https://instagram.com" className="text-2xl">
+          <a href="https://instagram.com/hadronsom/" className="text-2xl">
             <FaInstagram className="text-base-100" />
           </a>
-          <a href="https://whatsapp.com" className="text-2xl">
+          <a
+            href="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0"
+            className="text-2xl"
+          >
             <FaWhatsapp className="text-base-100" />
           </a>
         </div>

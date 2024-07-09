@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBoxOpen } from "react-icons/fa";
+import { FaBoxOpen, FaTools, FaTruck, FaWrench } from "react-icons/fa";
 import SectionTitle from "./SectionTitle";
 import AboutSectionCard from "./AboutSectionCard";
 import AboutSectionInfo from "./AboutSectionInfo";
@@ -13,24 +13,25 @@ const AboutSection = () => {
         "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
     },
     {
-      icon: FaBoxOpen,
-      title: "Fabricação de Caixas de Som",
+      icon: FaTools,
+      title: "Instalações",
       description:
-        "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
+        "Instalamos sistemas de som em diversos tipos de ambientes, garantindo a melhor acústica possível.",
     },
   ];
+
   const cards2 = [
     {
-      icon: FaBoxOpen,
-      title: "Fabricação de Caixas de Som",
+      icon: FaTruck,
+      title: "Visitas Técnicas",
       description:
-        "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
+        "Realizamos visitas técnicas grátis em todo o estado de São Paulo para avaliar suas necessidades de som.",
     },
     {
-      icon: FaBoxOpen,
-      title: "Fabricação de Caixas de Som",
+      icon: FaWrench,
+      title: "Manutenção",
       description:
-        "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
+        "Oferecemos serviços completos de manutenção e reparo para todos os nossos produtos.",
     },
   ];
   return (
@@ -45,7 +46,7 @@ const AboutSection = () => {
         }
       />
 
-      <div className="container grid grid-cols-3">
+      <div className="container grid md:grid-cols-3">
         <AboutSectionInfo
           title="Somos uma empresa que faz o seu som"
           description="Há mais de 20 anos no mercado...."

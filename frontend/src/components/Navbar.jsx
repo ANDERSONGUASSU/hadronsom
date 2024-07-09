@@ -51,14 +51,17 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end space-x-4">
-        <a href="https://facebook.com" className="text-2xl">
+      <div className="sm:navbar-end space-x-4">
+        <a href="https://facebook.com/hadrondivisaodeaudio" className="text-2xl">
           <FaFacebook className="text-color" />
         </a>
-        <a href="https://instagram.com" className="text-2xl">
+        <a href="https://instagram.com/hadronsom/" className="text-2xl">
           <FaInstagram className="text-color" />
         </a>
-        <a href="https://whatsapp.com" className="text-2xl">
+        <a
+          href="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0"
+          className="text-2xl"
+        >
           <FaWhatsapp className="text-color" />
         </a>
       </div>
