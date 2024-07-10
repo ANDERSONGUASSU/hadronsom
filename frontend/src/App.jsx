@@ -22,7 +22,7 @@ const App = () => {
     <>
       <Router basename="/hadronsom">
         <Header />
-        <main className="py-3">
+        <main className="">
           <Routes>
             <Route path="/" element={<HomePage />} />
           </Routes>
