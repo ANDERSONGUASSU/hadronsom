@@ -51,7 +51,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end space-x-4 smm:mr-10">
+      <div className="navbar-end space-x-4 md:mr-0 ssm:mr-10">
         <a href="https://facebook.com/hadrondivisaodeaudio" className="text-2xl">
           <FaFacebook className="text-color" />
         </a>
