@@ -22,6 +22,7 @@ import Card from "./Card";
 import FeatureItem from "./FeatureItem";
 import AboutSection from "./AboutSection";
 import ProductsServicesSection from "./ProductsServicesSection";
+import PackagesSection from "./PackagesSection";
 
 const Features = () => {
   const featureItems1 = [
@@ -112,6 +113,7 @@ const Features = () => {
       <div className="container mx-auto shadow-slate-600 shadow-md bg-base-100 rounded-lg">
         <AboutSection />
         <ProductsServicesSection />
+        <PackagesSection />
 
         <motion.div
           className="grid md:grid-cols-2 gap-4 mt-5 ml-2 mr-2"

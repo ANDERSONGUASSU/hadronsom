@@ -12,7 +12,7 @@ const FeatureItem = ({ icon: Icon, title, description }) => (
 );
 
 FeatureItem.propTypes = {
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
