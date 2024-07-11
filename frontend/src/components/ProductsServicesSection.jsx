@@ -11,7 +11,10 @@ const ProductsServicesSection = () => {
         subtitle={<>Os melhores produtos e serviços que a Hádrom tem a oferecer.</>}
       />
       <div className="container grid md:grid-cols-3">
-        <ProductsServicesInfo title="" description="" />
+        <ProductsServicesInfo
+          title="Conheça nossos produtos"
+          description="Temos Caixas de som, equipamentos, móveis para seu som e muito mais"
+        />
         <ProductsServicesImg />
       </div>
     </>

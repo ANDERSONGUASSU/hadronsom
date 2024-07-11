@@ -23,18 +23,18 @@ const ProductsServicesImg = () => {
             alt="Manutenção"
             className={`w-full max-w-xs md:max-w-sm lg:max-w-md shadow-lg border-4 border-white rounded-lg transition-transform duration-300 ${
               isFirstImageFront
-                ? "z-20 transform"
-                : "transform md:translate-x-16 smm: translate-x-16 -translate-y-14 z-10"
+                ? "z-20 transform translate-x-0 translate-y-0"
+                : "transform -translate-y-14 ssm:translate-x-20 sm:translate-x-32 lg:translate-x-40 z-10"
             }`}
             onClick={handleImageClick}
           />
           <img
             src={caixasDeSom}
             alt="Caixas de Som"
-            className={`w-full max-w-xs md:max-w-sm lg:max-w-md md:-translate-x-52 ssm:-translate-x-72  -translate-y-14 shadow-lg border-4 border-white rounded-lg transition-transform duration-300 ${
+            className={`w-full max-w-xs md:max-w-sm lg:max-w-md shadow-lg border-4 border-white rounded-lg transition-transform duration-300 ${
               isFirstImageFront
-                ? "transform z-10"
-                : "transform md:-translate-x-72 sm: -translate-x-94  smm: translate-y-3 z-20"
+                ? "transform -translate-y-14 ssm:-translate-x-64 sm:-translate-x-52 lg:-translate-x-80 z-10"
+                : "transform ssm:-translate-x-80 sm:-translate-x-80 md:-translate-x-64 lg:-translate-x-96 z-20"
             }`}
             onClick={handleImageClick}
           />
