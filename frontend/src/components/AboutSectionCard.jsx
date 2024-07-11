@@ -19,13 +19,15 @@ const AboutSectionCard = ({ icon: Icon, title, description }) => {
     >
       <div className="card" onClick={handleCardClick}>
         <div className="card-body card-bordered rounded-lg border-base-200 shadow-xl m-4">
-          <div className="avatar">
-            <div className="w-20 rounded-full bg-base-100 hover:bg-primary relative flex items-center justify-center text-primary hover:text-base-100">
-              <Icon className="text-3xl absolute inset-0 m-auto hover:scale-105" />
-            </div>
-          </div>
           <div className="card-title flex items-center justify-between">
-            {title}
+            <div className="flex items-center">
+              <div className="avatar mr-4">
+                <div className="w-12 h-12 rounded-full bg-base-100 hover:bg-primary relative flex items-center justify-center text-primary hover:text-base-100">
+                  <Icon className="text-3xl absolute inset-0 m-auto hover:scale-105" />
+                </div>
+              </div>
+              {title}
+            </div>
             <span className="ml-2">
               {isDescriptionVisible ? <FaChevronUp /> : <FaChevronDown />}
             </span>

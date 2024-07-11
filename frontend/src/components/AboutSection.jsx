@@ -61,7 +61,7 @@ const AboutSection = () => {
             />
           ))}
         </div>
-        <div className="col-span-1 -mt-10">
+        <div className="col-span-1 md:-mt-10">
           {cards2.map((card, index) => (
             <AboutSectionCard
               key={index}

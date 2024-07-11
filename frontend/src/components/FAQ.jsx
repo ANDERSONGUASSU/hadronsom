@@ -1,16 +1,29 @@
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const FAQSection = () => {
   const faqs = [
     {
       question: "Como posso ligar e desligar o som?",
-      answer:
-        "Para ligar o som, siga estas etapas: 1. Ligue o filtro de linha, régua de tomada ou no-break. 2. Ligue a mesa de som, equalizador, bases de microfones sem fio, processadores e todos os outros periféricos. 3. Ligue os amplificadores de potência e as caixas ativas. Para desligar, siga exatamente a ordem inversa.",
+      answer: (
+        <p>
+          Para ligar o som, siga estas etapas:
+          <br />
+          1. Ligue o filtro de linha, régua de tomada ou no-break.
+          <br />
+          2. Ligue a mesa de som, equalizador, bases de microfones sem fio, processadores e todos os
+          outros periféricos.
+          <br />
+          3. Ligue os amplificadores de potência e as caixas ativas.
+          <br />
+          4. Para desligar, siga exatamente a ordem inversa.
+        </p>
+      ),
     },
     {
-      question: "Como ajustar as configurações de audio?",
+      question: "Como ajustar as configurações de áudio?",
       answer:
-        "Para ajustar as configurações de audio, acesse o menu de configurações no canto superior direito.",
+        "Para ajustar as configurações de áudio, acesse o menu de configurações no canto superior direito.",
     },
     {
       question: "Como entrar em contato com o suporte?",
@@ -22,12 +35,10 @@ const FAQSection = () => {
   return (
     <section className="py-4">
       <div className="container">
-        <div className="text-center mb-8">
-          <h3 className="text-3xl font-bold">Perguntas Frequentes</h3>
-          <p className="text-xl">
-            Encontre abaixo respostas para as perguntas mais comuns sobre nossos serviços.
-          </p>
-        </div>
+        <SectionTitle
+          title="Perguntas Frequentes"
+          subtitle="Encontre abaixo respostas para as perguntas mais comuns sobre nossos serviços."
+        />
         {faqs.map((faq, index) => (
           <div key={index} className="bg-base-200 collapse mb-3 shadow-md shadow-base-300">
             <input type="checkbox" className="peer" />
@@ -35,7 +46,7 @@ const FAQSection = () => {
               <h4 className="text-lg">{faq.question}</h4>
             </div>
             <div className="collapse-content bg-primary text-primary-content peer-checked:bg-base-200 peer-checked:text-primary-content">
-              <p>{faq.answer}</p>
+              {typeof faq.answer === "string" ? <p>{faq.answer}</p> : faq.answer}
             </div>
           </div>
         ))}
