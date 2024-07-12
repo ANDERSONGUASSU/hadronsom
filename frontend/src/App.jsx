@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
@@ -16,26 +16,25 @@ const App = () => {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
+
   if (loading) {
     return <Loading />;
   }
 
   return (
-    <>
-      <div className="flex flex-col min-h-screen">
-        <Router basename="/hadronsom">
-          <Header />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/sobre-nos" element={<AboutPage />} />
-              <Route path="/contato" element={<ContactPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </Router>
-      </div>
-    </>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sobre-nos" element={<AboutPage />} />
+            <Route path="/contato" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
