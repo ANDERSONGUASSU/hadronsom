@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
+import ContactPage from "./pages/ContactPage";
 import Loading from "components/Loading";
+import AboutPage from "pages/AboutPage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -20,15 +22,19 @@ const App = () => {
 
   return (
     <>
-      <Router basename="/hadronsom">
-        <Header />
-        <main className="py-3">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
+      <div className="flex flex-col min-h-screen">
+        <Router basename="/hadronsom">
+          <Header />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/sobre-nos" element={<AboutPage />} />
+              <Route path="/contato" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </Router>
+      </div>
     </>
   );
 };

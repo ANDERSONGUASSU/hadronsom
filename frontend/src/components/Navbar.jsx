@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "assets/img/logo.avif";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [navbarBg, setNavbarBg] = useState(false);
+  const location = useLocation();
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -23,31 +25,45 @@ const Navbar = () => {
   return (
     <div
       className={`navbar top-0 w-full fixed z-50 transition-all duration-300 ${
-        navbarBg ? "bg-primary-content shadow-lg" : "bg-transparent z-50"
+        navbarBg
+          ? "bg-primary-content shadow-lg"
+          : location.pathname != "/"
+            ? "bg-primary-content"
+            : "bg-transparent z-50"
       }`}
     >
       <div className="navbar-start">
         <DropdownMenu />
-        <a className="btn btn-ghost text-xl text-color">
+        <Link to="/" className="btn btn-ghost text-xl text-color">
           <img className="h-16 -mt-2" src={logo} alt="logo" />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a className="text-color">Home</a>
+            <Link to="/" className="text-color">
+              Home
+            </Link>
           </li>
           <li>
-            <a className="text-color">Produto & Serviços</a>
+            <Link to="/produtos" className="text-color">
+              Produto & Serviços
+            </Link>
           </li>
           <li>
-            <a className="text-color">Nossos pacotes</a>
+            <Link to="/pacotes" className="text-color">
+              Nossos pacotes
+            </Link>
           </li>
           <li>
-            <a className="text-color">Sobre nós</a>
+            <Link to="/sobre-nos" className="text-color">
+              Sobre nós
+            </Link>
           </li>
           <li>
-            <a className="text-color">Contato</a>
+            <Link to="/contato" className="text-color">
+              Contato
+            </Link>
           </li>
         </ul>
       </div>
@@ -93,11 +109,11 @@ const DropdownMenu = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
       >
         <li>
-          <a>Home</a>
-          <a>Produto & Serviços</a>
-          <a>Nossos pacotes</a>
-          <a>Sobre nós</a>
-          <a>Contato</a>
+          <Link to="/">Home</Link>
+          <Link to="/produtos">Produto & Serviços</Link>
+          <Link to="/pacotes">Nossos pacotes</Link>
+          <Link to="/sobre">Sobre nós</Link>
+          <Link to="/contato">Contato</Link>
         </li>
       </ul>
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { BiSolidRightArrowAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const AboutSectionInfo = ({ title, description }) => {
   return (
@@ -16,14 +17,16 @@ const AboutSectionInfo = ({ title, description }) => {
       </div>
       <h2 className="text-primary-content text-2xl font-semibold w-3/4">{title}</h2>
       <p className="font-light mb-4">{description}</p>
-      <a role="button" className="btn btn-primary text-base-100">
+      <Link to="/sobre-nos" className="btn btn-primary text-base-100">
         Saiba mais <BiSolidRightArrowAlt className="text-xl" />
-      </a>
+      </Link>
     </motion.div>
   );
 };
+
 AboutSectionInfo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
+
 export default AboutSectionInfo;
