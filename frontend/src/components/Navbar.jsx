@@ -112,7 +112,7 @@ const DropdownMenu = () => {
           <Link to="/">Home</Link>
           <Link to="/produtos">Produto & Serviços</Link>
           <Link to="/pacotes">Nossos pacotes</Link>
-          <Link to="/sobre">Sobre nós</Link>
+          <Link to="/sobre-nos">Sobre nós</Link>
           <Link to="/contato">Contato</Link>
         </li>
       </ul>
