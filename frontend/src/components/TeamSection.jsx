@@ -44,7 +44,7 @@ const TeamSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="avatar flex items-center justify-center relative">
-                <div className="w-40 border-4 border-primary rounded-full relative">
+                <div className="w-40 border-4 border-base-100 shadow-lg rounded-full relative">
                   <img src={member.image} className="rounded-full" alt={member.name} />
                   <div className="w-40 h-40 absolute -inset-1 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity rounded-full flex items-center justify-center gap-2">
                     <a href="#" className="text-base-100 text-xl">

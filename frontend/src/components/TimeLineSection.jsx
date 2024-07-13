@@ -6,7 +6,7 @@ const TimelineSection = () => {
   const timelineData = [
     {
       title: "First Macintosh computer",
-      year: "1984",
+      year: "1994",
       description:
         "The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer.",
     },
