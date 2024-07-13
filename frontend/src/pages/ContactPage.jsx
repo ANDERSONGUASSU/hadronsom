@@ -12,7 +12,7 @@ const ContactSection = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
-            className="info-item flex flex-col justify-center items-center shadow-lg"
+            className="info-item flex flex-col justify-center items-center shadow-lg py-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -25,18 +25,19 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            className="info-item flex flex-col justify-center items-center shadow-lg"
+            className="info-item flex flex-col justify-center items-center shadow-lg py-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
             <BiTime className="text-4xl mb-4 text-primary" />
             <h3 className="text-xl font-semibold">Horário de Funcionamento</h3>
+            <p className="text-gray-600">Seg - Sex</p>
             <p className="text-gray-600">09:00 às 18:00</p>
           </motion.div>
 
           <motion.div
-            className="info-item flex flex-col justify-center items-center shadow-lg"
+            className="info-item flex flex-col justify-center items-center shadow-lg py-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -47,7 +48,7 @@ const ContactSection = () => {
           </motion.div>
 
           <motion.div
-            className="info-item flex flex-col justify-center items-center shadow-lg"
+            className="info-item flex flex-col justify-center items-center shadow-lg py-4"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
