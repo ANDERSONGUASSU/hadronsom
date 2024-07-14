@@ -88,10 +88,11 @@ const Navbar = () => {
 const DropdownMenu = () => {
   return (
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost text-color lg:hidden">
+      <div tabIndex={0} role="button" className="bg-transparent text-color lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          width="24"
+          height="24"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
