@@ -3,8 +3,8 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
-.text-color {
-    color: var(--color-secondary-content)
+.icon-bars {
+    font-size: 1.25rem !important
 }
 
 .typed-fade-out {
@@ -34,6 +34,7 @@
         margin: 0.5rem;
     }
 }
+
 @media (max-width: 414px) {
 
     .section-title h2:before,
@@ -46,6 +47,7 @@
         margin: 0.5rem;
     }
 }
+
 .carousel-transf {
     display: flex;
     transition: transform 0.5s ease-in-out;
