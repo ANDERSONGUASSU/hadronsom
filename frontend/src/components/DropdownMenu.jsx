@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa6";
 const DropdownMenu = () => {
   return (
     <>
-      <div className="dropdown">
+      <div className="dropdown ssm:text-2xl">
         <div
           tabIndex={0}
           role="button"
