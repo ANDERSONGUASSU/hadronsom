@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hadronsom/static/css/main.9b85fdfd.css",
-    "main.js": "/hadronsom/static/js/main.f67f61d5.js",
+    "main.css": "/hadronsom/static/css/main.c318ca7e.css",
+    "main.js": "/hadronsom/static/js/main.6aec495b.js",
     "static/js/453.8ab44547.chunk.js": "/hadronsom/static/js/453.8ab44547.chunk.js",
     "static/media/igreja.jpg": "/hadronsom/static/media/igreja.24162c3bebff44ee249a.jpg",
     "static/media/caixas.jpg": "/hadronsom/static/media/caixas.e6a41f5575ef4d914876.jpg",
@@ -16,12 +16,12 @@
     "static/media/daniel.jpg": "/hadronsom/static/media/daniel.9ced26fdfd8797cbefba.jpg",
     "static/media/logo.avif": "/hadronsom/static/media/logo.7e584569cdc75bd67cc4.avif",
     "index.html": "/hadronsom/index.html",
-    "main.9b85fdfd.css.map": "/hadronsom/static/css/main.9b85fdfd.css.map",
-    "main.f67f61d5.js.map": "/hadronsom/static/js/main.f67f61d5.js.map",
+    "main.c318ca7e.css.map": "/hadronsom/static/css/main.c318ca7e.css.map",
+    "main.6aec495b.js.map": "/hadronsom/static/js/main.6aec495b.js.map",
     "453.8ab44547.chunk.js.map": "/hadronsom/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b85fdfd.css",
-    "static/js/main.f67f61d5.js"
+    "static/css/main.c318ca7e.css",
+    "static/js/main.6aec495b.js"
   ]
 }
