@@ -9,9 +9,9 @@ const DropdownMenu = () => {
         <div
           tabIndex={0}
           role="button"
-          className="btn btn-ghost rounded-btn text-base-100 lg:hidden"
+          className="btn btn-ghost rounded-btn text-base-100 lg:hidden ssm:text-2xl"
         >
-          <FaBars style={{ width: "24px", height: "24px" }} />
+          <FaBars style={{ width: "24px", height: "24px" }} className="ssm:text-2xl" />
         </div>
         <ul
           tabIndex={0}
