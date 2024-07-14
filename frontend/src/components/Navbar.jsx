@@ -1,37 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import logo from "assets/img/logo.avif";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [navbarBg, setNavbarBg] = useState(false);
-  const location = useLocation();
-
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setNavbarBg(true);
-    } else {
-      setNavbarBg(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div
-      className={`navbar top-0 w-full fixed z-50 transition-all duration-300 ${
-        navbarBg
-          ? "bg-primary-content shadow-lg"
-          : location.pathname != "/"
-            ? "bg-primary-content"
-            : "bg-transparent z-50"
-      }`}
-    >
+    <div className="navbar top-0 w-full fixed z-50 transition-all duration-300 bg-primary-content shadow-lg">
       <div className="navbar-start">
         <DropdownMenu />
         <Link to="/" className="btn btn-ghost text-xl text-color">
@@ -67,7 +41,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end space-x-4 md:mr-0 ssm:mr-10">
+      <div className="navbar-end space-x-4 md:mr-5 ssm:mr-10">
         <a href="https://facebook.com/hadrondivisaodeaudio" className="text-2xl">
           <FaFacebook className="text-color" />
         </a>

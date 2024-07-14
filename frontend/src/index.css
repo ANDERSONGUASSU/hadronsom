@@ -3,16 +3,9 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
-.drop {
-    display: none;
-    /* Inicialmente esconde o dropdown */
+.text-color{
+    color: var(--color-secondary-content)
 }
-
-.drop.show {
-    display: block;
-    /* Mostra o dropdown quando estiver aberto */
-}
-
 .typed-fade-out {
     opacity: 0;
     transition: opacity 0.5s;
