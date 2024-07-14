@@ -1,32 +1,55 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Dropdown } from "react-bootstrap";
 import { FaBars } from "react-icons/fa6";
 
 const DropdownMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
+
+  // Função para fechar o dropdown quando clicar fora dele
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  // Efeito para adicionar evento de clique fora do dropdown
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <>
-      <div className="dropdown ssm:text-2xl w-24 h-24">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn btn-ghost rounded-btn text-base-100 lg:hidden ssm:text-2xl"
-        >
-          <FaBars style={{ width: "24px", height: "24px" }} className="ssm:text-2xl" />
-        </div>
-        <ul
-          tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-        >
-          <li>
-            <Link to="/">Home</Link>
-            <Link to="/produtos">Produto & Serviços</Link>
-            <Link to="/pacotes">Nossos pacotes</Link>
-            <Link to="/sobre-nos">Sobre nós</Link>
-            <Link to="/contato">Contato</Link>
-          </li>
-        </ul>
-      </div>
-    </>
+    <Dropdown show={isOpen} onClick={() => setIsOpen(!isOpen)} ref={ref}>
+      <Dropdown.Toggle
+        variant="success"
+        id="dropdown-basic"
+        className="lg:hidden btn-ghost text-base-100"
+      >
+        <FaBars className="text-2xl" />
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className="drop w-56 bg-base-100 mt-2 p-2 shadow-lg">
+        <Dropdown.Item as={Link} to="/" className="block py-2 px-4">
+          Home
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} to="/produtos" className="block py-2 px-4">
+          Produto & Serviços
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} to="/pacotes" className="block py-2 px-4">
+          Nossos pacotes
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} to="/sobre-nos" className="block py-2 px-4">
+          Sobre nós
+        </Dropdown.Item>
+        <Dropdown.Item as={Link} to="/contato" className="block py-2 px-4">
+          Contato
+        </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
   );
 };
 

@@ -3,8 +3,14 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
-.icon-bars {
-    font-size: 1.25rem !important
+.drop {
+    display: none;
+    /* Inicialmente esconde o dropdown */
+}
+
+.drop.show {
+    display: block;
+    /* Mostra o dropdown quando estiver aberto */
 }
 
 .typed-fade-out {
