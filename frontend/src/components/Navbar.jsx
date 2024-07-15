@@ -41,27 +41,27 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/" className="text-color">
+            <Link to="/" className="text-base-100 focus:text-primary">
               Home
             </Link>
           </li>
           <li>
-            <Link to="/produtos" className="text-color">
+            <Link to="/produtos" className="text-base-100 focus:text-primary">
               Produto & Serviços
             </Link>
           </li>
           <li>
-            <Link to="/pacotes" className="text-color">
+            <Link to="/pacotes" className="text-base-100 focus:text-primary">
               Nossos pacotes
             </Link>
           </li>
           <li>
-            <Link to="/sobre-nos" className="text-color">
+            <Link to="/sobre-nos" className="text-base-100 focus:text-primary">
               Sobre nós
             </Link>
           </li>
           <li>
-            <Link to="/contato" className="text-color">
+            <Link to="/contato" className="text-base-100 focus:text-primary">
               Contato
             </Link>
           </li>
