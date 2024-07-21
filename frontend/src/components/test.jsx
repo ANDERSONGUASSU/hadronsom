@@ -1,6 +1,6 @@
 import React from "react";
-import { Card } from "./Card"; // Importe seu componente Card aqui
-import { FeatureItem } from "./FeatureItem"; // Importe seu componente FeatureItem aqui
+import { Card } from "./Home/Card"; // Importe seu componente Card aqui
+import { FeatureItem } from "./Home/FeatureItem"; // Importe seu componente FeatureItem aqui
 import caixasDeSom from "../assets/img/caixasDeSom.png";
 import pacotes from "../assets/img/pacotes.png";
 

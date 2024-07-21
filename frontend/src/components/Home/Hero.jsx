@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Typed from "typed.js";
-import igrejaImage from "../assets/img/igreja.jpg";
+import igrejaImage from "../../assets/img/igreja.jpg";
 
 const Hero = () => {
   useEffect(() => {

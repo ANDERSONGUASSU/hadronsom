@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle";
 import ProductsServicesImg from "./ProductsServivesImg";
 import ProductsServicesInfo from "./ProductsServicesInfo";
 

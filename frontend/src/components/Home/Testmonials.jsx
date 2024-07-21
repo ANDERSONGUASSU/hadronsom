@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { ImQuotesRight } from "react-icons/im";
-import cl1 from "../assets/img/cliente-1.jpg";
-import cl2 from "../assets/img/cliente-2.png";
+import cl1 from "../../assets/img/cliente-1.jpg";
+import cl2 from "../../assets/img/cliente-2.png";
 
 const testimonials = [
   {

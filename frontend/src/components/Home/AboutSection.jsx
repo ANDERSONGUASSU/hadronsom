@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBoxOpen, FaTools, FaTruck, FaWrench } from "react-icons/fa";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle";
 import AboutSectionCard from "./AboutSectionCard";
 import AboutSectionInfo from "./AboutSectionInfo";
 

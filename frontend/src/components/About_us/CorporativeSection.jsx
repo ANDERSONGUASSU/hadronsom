@@ -1,5 +1,5 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle";
 import CorporativeSectionCard from "./CorporativeSectionCard";
 import { FaBusinessTime, FaBullseye, FaEye, FaHeart } from "react-icons/fa";
 

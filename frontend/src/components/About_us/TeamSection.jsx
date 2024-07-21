@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import SectionTitle from "./SectionTitle";
-import equipe1 from "../assets/img/daniel.jpg";
+import SectionTitle from "../SectionTitle";
+import equipe1 from "../../assets/img/daniel.jpg";
 
 const teamMembers = [
   {

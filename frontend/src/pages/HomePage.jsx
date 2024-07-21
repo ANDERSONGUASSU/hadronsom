@@ -1,8 +1,8 @@
-import Hero from "components/Hero";
-import Features from "components/Features";
-import BannerContact from "components/BannerContact";
-import FAQSection from "components/FAQ";
-import Testmonials from "components/Testmonials";
+import Hero from "components/Home/Hero";
+import Features from "components/Home/Features";
+import BannerContact from "components/Home/BannerContact";
+import FAQSection from "components/Home/FAQ";
+import Testmonials from "components/Home/Testmonials";
 import React from "react";
 
 const HomePage = () => {
