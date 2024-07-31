@@ -17,7 +17,7 @@ const AboutSectionCard = ({ icon: Icon, title, description }) => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 1 }}
     >
-      <div className="card" onClick={handleCardClick}>
+      <div className="card hover:cursor-pointer" onClick={handleCardClick}>
         <div className="card-body card-bordered rounded-lg border-base-200 shadow-xl m-4">
           <div className="card-title flex items-center justify-between">
             <div className="flex items-center">

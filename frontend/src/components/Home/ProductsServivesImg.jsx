@@ -16,7 +16,7 @@ const ProductsServicesImg = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 1 }}
     >
-      <div className="col-span-1 flex justify-center items-center ssm:mt-16">
+      <div className="hover:cursor-pointer col-span-1 flex justify-center items-center ssm:mt-16">
         <div className="flex space-x-4">
           <img
             src={mesa}

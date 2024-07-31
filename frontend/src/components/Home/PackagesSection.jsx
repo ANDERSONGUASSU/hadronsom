@@ -1,28 +1,36 @@
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import PackagesSectionCard from "./PackagesSectionCard";
+import pacotes from "assets/img/pacotes.png";
 
 const PackagesSection = () => {
   const packages = [
     {
-      title: "Kit Básico",
-      description: "Cobertura de 240m²",
-      features: ["2 cx de som RA8", "2 sub", "1 Processador digital PRO8", "2 Suportes"],
+      img: pacotes,
+      title: "Pacote 1",
+      coverage: "240m²",
+      description:
+        "Aprimora a potência, amplia a clareza sonora e assegura uma cobertura ideal para bandas completas, incluindo vozes, violão, guitarra e bateria elétrica.",
     },
     {
-      title: "Kit Intermediário",
-      description: "Cobertura de 300m²",
-      features: ["4 cx de som RA8", "4 sub", "1 Processador digital PRO16", "4 Suportes"],
+      img: pacotes,
+      title: "Pacote 2",
+      coverage: "480m²",
+      description:
+        "Aprimora a potência, amplia a clareza sonora e garante uma cobertura ideal para bandas completas, abrangendo vozes, violão, bateria elétrica. Além disso, a divisão das caixas proporcionam uma difusão ampliada do som.",
     },
     {
-      title: "Kit Avançado",
-      description: "Cobertura de 500m²",
-      features: ["8 cx de som RA8", "8 sub", "2 Processadores digitais PRO16", "8 Suportes"],
+      img: pacotes,
+      title: "Pacote 3",
+      coverage: "480m²",
+      description:
+        "A divisão das caixas proporciona uma difusão ampliada do som. É ideal para vozes em igrejas",
     },
     {
-      title: "Kit Profissional",
-      description: "Cobertura de 1000m²",
-      features: ["16 cx de som RA8", "16 sub", "4 Processadores digitais PRO32", "16 Suportes"],
+      img: pacotes,
+      title: "Pacote 4",
+      coverage: "320m²",
+      description: ["Ideal para uso em lojas e mercados."],
     },
   ];
 
@@ -36,9 +44,10 @@ const PackagesSection = () => {
         {packages.map((pkg, index) => (
           <PackagesSectionCard
             key={index}
+            img={pkg.img}
             title={pkg.title}
+            coverage={pkg.coverage}
             description={pkg.description}
-            features={pkg.features}
           />
         ))}
       </div>
