@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage";
 import Loading from "components/Loading";
 import AboutPage from "pages/AboutPage";
 import ProductsServicesPage from "pages/ProductsServicesPage";
+import ProductDetailPage from "pages/ProductDetailPage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/produtos" element={<ProductsServicesPage />} />
+            <Route path="/produtos/:id" element={<ProductDetailPage />} />
             <Route path="/sobre-nos" element={<AboutPage />} />
             <Route path="/contato" element={<ContactPage />} />
           </Routes>
