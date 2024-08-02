@@ -90,10 +90,3 @@ h4 {
   display: block;
 }
 
-.magnify {
-  @apply absolute bg-no-repeat border-2 border-white;
-  width: 200px;
-  height: 200px;
-  background-size: 800%;
-  background-position: center;
-}

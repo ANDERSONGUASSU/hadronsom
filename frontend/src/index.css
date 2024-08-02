@@ -3,9 +3,11 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
-.text-color{
+
+.text-color {
     color: var(--color-secondary-content)
 }
+
 .typed-fade-out {
     opacity: 0;
     transition: opacity 0.5s;
@@ -116,5 +118,34 @@
     .swiper-slide-active {
         opacity: 1 !important;
         transform: scale(1.2) !important;
+    }
+}
+
+.magnify {
+    background: no-repeat;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: 800%;
+    background-position: center;
+    border: 2px solid white;
+    pointer-events: none;
+    transform: scale(0);
+    animation: scaleUp 150ms ease-in forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.1);
+
+    }
+
+    100% {
+        transform: scale(1);
+
     }
 }

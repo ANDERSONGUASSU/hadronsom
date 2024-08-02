@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
 
   return (
     <>
-      <div className="container mt-24">
+      <div className="container mt-24 flex flex-col">
         <div className="breadcrumbs text-sm">
           <ul>
             <li>
@@ -37,10 +37,10 @@ const ProductDetailPage = () => {
           <div className="w-1/2">
             <Carousel images={product.images} />
           </div>
-          <div className="w-1/2 p-4">
-            <p className="text-gray-600 mb-4">{product.description}</p>
-            <p className="text-sm text-gray-500">{product.category}</p>
-          </div>
+        </div>
+        <div className="w-1/2 p-4">
+          <p className="text-gray-600 mb-4">{product.description}</p>
+          <p className="text-sm text-gray-500">{product.category}</p>
         </div>
       </div>
     </>
