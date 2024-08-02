@@ -2,6 +2,7 @@ import React from "react";
 import SectionTitle from "../SectionTitle";
 import CorporativeSectionCard from "./CorporativeSectionCard";
 import { FaBusinessTime, FaBullseye, FaEye, FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const CorporativeSection = () => {
   const cardsData = [
@@ -33,7 +34,17 @@ const CorporativeSection = () => {
 
   return (
     <>
-      <div className="container mt-16">
+      <div className="container mt-24">
+        <div className="breadcrumbs text-sm">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/sobre-nos">Sobre nós</Link>
+            </li>
+          </ul>
+        </div>
         <SectionTitle title="Identidade Corporativa" subtitle="Negócio, Missão, Visão e Valores" />
         <div className="flex flex-wrap -mx-4">
           {cardsData.map((card, index) => (

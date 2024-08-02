@@ -2,11 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import SectionTitle from "components/SectionTitle";
 import { BiMap, BiTime, BiPhone, BiEnvelope } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="contact section py-16">
-      {/* Section Title */}
+    <section id="contact" className="container mt-24 contact section">
+      <div className="breadcrumbs text-sm">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/contato">Contato</Link>
+          </li>
+        </ul>
+      </div>
       <SectionTitle title="Contato" subtitle="" />
 
       <div className="container mx-auto">

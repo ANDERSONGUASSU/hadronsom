@@ -5,6 +5,7 @@ import Cards from "./Cards";
 import List from "./List";
 import Search from "./SearchSection";
 import productsServices from "data/productsServicesData";
+import { Link } from "react-router-dom";
 
 const ProductsServices = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,6 +30,16 @@ const ProductsServices = () => {
       <Sidebar setSelectedCategory={setSelectedCategory} />
 
       <div className="flex-grow container mt-14 ssm:ml-10 sm:ml-16 lg:ml-0">
+        <div className="breadcrumbs text-sm">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/produtos">Protutos & Serviços</Link>
+            </li>
+          </ul>
+        </div>
         <SectionTitle title="Produtos" subtitle="" />
 
         <Search

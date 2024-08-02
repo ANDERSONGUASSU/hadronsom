@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import productsServices from "data/productsServicesData";
 import SectionTitle from "components/SectionTitle";
 import Carousel from "components/ProductDetail/carousel";
+import { Link } from "react-router-dom";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -14,7 +15,20 @@ const ProductDetailPage = () => {
 
   return (
     <>
-      <div className="container mt-14">
+      <div className="container mt-24">
+        <div className="breadcrumbs text-sm">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/produtos">Protutos & Serviços</Link>
+            </li>
+            <li>
+              <Link to={`/produtos/${product.id}`}>{product.title}</Link>
+            </li>
+          </ul>
+        </div>
         <SectionTitle className="text-center" title="Detalhes do Produto" subtitle="" />
       </div>
       <div className="container mx-auto py-8">

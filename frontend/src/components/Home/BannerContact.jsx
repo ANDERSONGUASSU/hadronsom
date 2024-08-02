@@ -12,12 +12,14 @@ const BannerContact = () => {
           Temos o som de qualidade para transformar seu ambiente.
         </h2>
         <div className="mt-8">
-          <button
-            type="button"
+          <a
+            href="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-blue-900 to-blue-600 hover:from-blue-500 hover:to-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
           >
             Entre em Contato
-          </button>
+          </a>
         </div>
       </div>
     </section>
