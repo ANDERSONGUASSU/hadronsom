@@ -8,6 +8,7 @@ import Loading from "components/Loading";
 import AboutPage from "pages/AboutPage";
 import ProductsServicesPage from "pages/ProductsServicesPage";
 import ProductDetailPage from "pages/ProductDetailPage";
+import "./App.css";
 
 const App = () => {
   const [loading, setLoading] = useState(true);

@@ -4,6 +4,7 @@
 @import "assets/css/variables.css";
 
 
+
 .text-color {
     color: var(--color-secondary-content)
 }
@@ -147,5 +148,11 @@
     100% {
         transform: scale(1);
 
+    }
+}
+
+@media (max-width: 768px) {
+    .magnify {
+        display: none !important
     }
 }

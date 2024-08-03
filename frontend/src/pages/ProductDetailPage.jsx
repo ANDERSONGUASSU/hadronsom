@@ -31,16 +31,15 @@ const ProductDetailPage = () => {
         </div>
         <SectionTitle className="text-center" title="Detalhes do Produto" subtitle="" />
       </div>
-      <div className="container mx-auto py-8">
-        <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
+      <div className="container mx-auto py-8 flex flex-col justify-center">
+        <h1 className="text-3xl font-bold mb-2 text-center">{product.title}</h1>
         <div className="flex">
           <div className="w-1/2">
             <Carousel images={product.images} />
           </div>
         </div>
-        <div className="w-1/2 p-4">
-          <p className="text-gray-600 mb-4">{product.description}</p>
-          <p className="text-sm text-gray-500">{product.category}</p>
+        <div className="contanier p-4 flex flex-col justify-center">
+          <p className="text-gray-600 mb-4 text-center">{product.description}</p>
         </div>
       </div>
     </>

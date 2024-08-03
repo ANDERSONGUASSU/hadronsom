@@ -31,37 +31,39 @@ const Carousel = ({ images }) => {
 
   return (
     <>
-      <div className="carousel w-full">
-        <div className="relative w-full">
-          {images.map((image, index) => (
-            <div
+      <div className="container w-svw">
+        <div className="carousel w-full">
+          <div className="relative w-full flex justify-center items-center">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`carousel-item relative w-6/12 h-full ${index === currentSlide ? "block" : "hidden"}`}
+              >
+                <img
+                  src={image}
+                  className="w-full h-full md:cursor-none"
+                  alt={`Slide ${index + 1}`}
+                  draggable={false}
+                  onMouseLeave={handleMouseLeave}
+                  onMouseMove={handleMouseMove}
+                  style={{ position: "relative" }}
+                />
+                <div className="magnify hidden rounded-full" style={magnifyStyle}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex justify-center mt-4">
+          {images.map((_, index) => (
+            <button
               key={index}
-              className={`carousel-item relative w-full ${index === currentSlide ? "block" : "hidden"}`}
-            >
-              <img
-                src={image}
-                className="w-full h-full cursor-none"
-                alt={`Slide ${index + 1}`}
-                draggable={false}
-                onMouseLeave={handleMouseLeave}
-                onMouseMove={handleMouseMove}
-                style={{ position: "relative" }}
-              />
-              <div className="magnify hidden rounded-full" style={magnifyStyle}></div>
-            </div>
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 mx-1 rounded-full ${
+                index === currentSlide ? "bg-gray-800" : "bg-gray-400"
+              }`}
+            />
           ))}
         </div>
-      </div>
-      <div className="flex justify-center mt-4">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 mx-1 rounded-full ${
-              index === currentSlide ? "bg-gray-800" : "bg-gray-400"
-            }`}
-          />
-        ))}
       </div>
     </>
   );
