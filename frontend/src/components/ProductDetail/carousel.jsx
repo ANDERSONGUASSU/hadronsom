@@ -37,7 +37,7 @@ const Carousel = ({ images }) => {
             {images.map((image, index) => (
               <div
                 key={index}
-                className={`carousel-item relative w-6/12 h-full ${index === currentSlide ? "block" : "hidden"}`}
+                className={`carousel-item relative md:w-6/12 ssm:w-full h-full ${index === currentSlide ? "block" : "hidden"}`}
               >
                 <img
                   src={image}

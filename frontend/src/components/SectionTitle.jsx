@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const SectionTitle = ({ title, subtitle }) => {
   return (
-    <div className="container text-center mb-8 section-title py-8">
+    <div className="text-center mb-8 section-title py-8">
       <motion.h2
         className="text-3xl font-bold text-primary-content m-2"
         initial={{ opacity: 0, y: -50 }}

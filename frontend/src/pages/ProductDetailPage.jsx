@@ -15,8 +15,8 @@ const ProductDetailPage = () => {
 
   return (
     <>
-      <div className="container mt-24 flex flex-col">
-        <div className="breadcrumbs text-sm">
+      <div className="mt-24 flex flex-col">
+        <div className="ml-4 breadcrumbs text-sm">
           <ul>
             <li>
               <Link to="/">Home</Link>
