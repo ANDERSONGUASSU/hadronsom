@@ -9,6 +9,7 @@ import AboutPage from "pages/AboutPage";
 import ProductsServicesPage from "pages/ProductsServicesPage";
 import ProductDetailPage from "pages/ProductDetailPage";
 import "./App.css";
+import FloatingWhatsAppButton from "components/FloatingWhatsAppButton";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="/contato" element={<ContactPage />} />
           </Routes>
         </main>
+        <FloatingWhatsAppButton />
         <Footer />
       </Router>
     </div>

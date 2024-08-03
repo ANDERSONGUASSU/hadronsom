@@ -38,6 +38,11 @@ const ProductDetailPage = () => {
             <Carousel images={product.images} />
           </div>
         </div>
+        <div className="p-4 flex justify-end">
+          <button className="bg-green-500 text-base-100 py-2 px-4 rounded-full">
+            Peça um orçamento
+          </button>
+        </div>
         <div className="contanier p-4 flex flex-col justify-center">
           <p className="text-gray-600 mb-4 text-center">{product.description}</p>
         </div>
