@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import WhatsAppButton from "components/WhatsAppButton";
 
 const Cards = ({ product }) => {
   return (
@@ -19,6 +20,9 @@ const Cards = ({ product }) => {
           <p className="text-sm text-gray-500">{product.category}</p>
         </div>
       </Link>
+      <div className="p-4 flex justify-end">
+        <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+      </div>
     </div>
   );
 };

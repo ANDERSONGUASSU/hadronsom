@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 const FloatingWhatsAppButton = () => {
   return (
-    <Link to="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0">
+    <Link
+      to="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0"
+      target="_blank"
+    >
       <motion.div
         style={{
           position: "fixed",
