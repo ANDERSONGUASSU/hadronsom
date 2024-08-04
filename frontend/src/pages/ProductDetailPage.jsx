@@ -10,6 +10,7 @@ import DetailedDescription from "components/ProductDetail/DetailedDescription";
 import Specifications from "components/ProductDetail/Specifications";
 import TechnicalDetails from "components/ProductDetail/TechnicalDetails";
 import PackagesSection from "components/Home/PackagesSection";
+import MostViewedProducts from "components/ProductDetail/MostViewedProducts";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -18,6 +19,10 @@ const ProductDetailPage = () => {
   if (!product) {
     return <div>Produto não encontrado.</div>;
   }
+  const mostViewedProducts = productsServices
+    .filter((p) => p.id !== product.id)
+    .sort((a, b) => b.views - a.views)
+    .slice(0, 4);
 
   return (
     <>
@@ -57,6 +62,7 @@ const ProductDetailPage = () => {
           <DetailedDescription detailedDescription={product.detailedDescription} />
           <Specifications specifications={product.specifications} />
           <TechnicalDetails technicalDetails={product.technicalDetails} />
+          <MostViewedProducts products={mostViewedProducts} />
           <PackagesSection />
         </div>
       </div>

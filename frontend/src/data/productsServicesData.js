@@ -1,6 +1,7 @@
 const productsServices = [
   {
     id: 1,
+    views: 53,
     rating: 0,
     reviews: 0,
     title: "Mesa de Som Profissional",
@@ -32,6 +33,7 @@ const productsServices = [
   },
   {
     id: 2,
+    views: 50,
     rating: 4,
     reviews: 6,
     title: "Caixas de Som Profissionais",
@@ -59,6 +61,7 @@ const productsServices = [
   },
   {
     id: 3,
+    views: 59,
     rating: 4,
     reviews: 6,
     title: "Subwoofers",
