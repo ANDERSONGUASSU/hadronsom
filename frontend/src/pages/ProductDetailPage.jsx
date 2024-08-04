@@ -8,6 +8,7 @@ import WhatsAppButton from "components/WhatsAppButton";
 import Rating from "components/ProductDetail/Ratings";
 import DetailedDescription from "components/ProductDetail/DetailedDescription";
 import Specifications from "components/ProductDetail/Specifications";
+import TechnicalDetails from "components/ProductDetail/TechnicalDetails";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -54,6 +55,7 @@ const ProductDetailPage = () => {
           <p className="text-gray-600 mb-4 text-center">{product.description}</p>
           <DetailedDescription detailedDescription={product.detailedDescription} />
           <Specifications specifications={product.specifications} />
+          <TechnicalDetails technicalDetails={product.technicalDetails} />
         </div>
       </div>
     </>
