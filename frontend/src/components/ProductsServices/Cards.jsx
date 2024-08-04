@@ -21,11 +21,13 @@ const Cards = ({ product }) => {
           <p className="text-sm text-gray-500">{product.category}</p>
         </div>
       </Link>
-      <div className="p-4 flex justify-between">
+      <div className="p-4 flex flex-col items-center">
         <div>
           <Rating rating={product.rating} reviews={product.reviews} productId={product.id} />
         </div>
-        <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+        <div>
+          <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+        </div>
       </div>
     </div>
   );

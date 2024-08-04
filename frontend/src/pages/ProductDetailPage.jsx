@@ -42,22 +42,24 @@ const ProductDetailPage = () => {
         </div>
         <SectionTitle className="text-center" title="Detalhes do Produto" subtitle="" />
       </div>
-      <div className="container mx-auto py-8 flex flex-col justify-center">
+      <div className="md:container mx-auto py-8 flex flex-col justify-center">
         <h1 className="md:text-3xl ssm:text-2xl font-bold mb-2 text-center">{product.title}</h1>
         <div className="flex">
-          <div className="w-1/2">
+          <div className="w-1/2 ssm:w-full">
             <Carousel images={product.images} />
           </div>
         </div>
-        <div className="container p-4  flex md:justify-center ssm: justify-between">
-          <div className="w-1/2 flex justify-between">
-            <div className="w-1/2">
+        <div className="container p-4 flex md:justify-center ssm:flex-col ssm:items-center">
+          <div className="md:w-1/2 ssm:w-3/4 flex md:flex-row ssm:flex-col md:justify-between ssm:items-center">
+            <div className="md:w-1/2 ssm:w-full ssm:mb-4">
               <Rating rating={product.rating} reviews={product.reviews} productId={product.id} />
             </div>
-            <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+            <div className="md:w-1/2 ssm:w-full">
+              <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+            </div>
           </div>
         </div>
-        <div className="contanier p-4 flex flex-col justify-center">
+        <div className="md:contanier p-4 flex flex-col justify-center">
           <p className="text-gray-600 mb-4 text-center">{product.description}</p>
           <DetailedDescription detailedDescription={product.detailedDescription} />
           <Specifications specifications={product.specifications} />

@@ -31,7 +31,7 @@ const Carousel = ({ images }) => {
 
   return (
     <>
-      <div className="container w-svw">
+      <div className="md:container ssm:w-svw ssm:p-6">
         <div className="carousel w-full">
           <div className="relative w-full flex justify-center items-center">
             {images.map((image, index) => (

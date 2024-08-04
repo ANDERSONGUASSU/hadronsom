@@ -19,11 +19,13 @@ const List = ({ product }) => {
           <p className="text-sm font-light text-gray-500">{product.category}</p>
         </div>
       </Link>
-      <div className="p-4 flex justify-around gap-4">
+      <div className="p-4 flex flex-col items-center gap-4">
         <div>
           <Rating rating={product.rating} reviews={product.reviews} productId={product.id} />
         </div>
-        <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+        <div>
+          <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+        </div>
       </div>
     </div>
   );

@@ -5,8 +5,8 @@ import SectionTitle from "components/SectionTitle";
 
 const MostViewedProducts = ({ products }) => {
   return (
-    <div className="container mx-auto py-8">
-      <SectionTitle title="Nossos clientes também viram" subtitle="" />
+    <div className="md:container mx-auto py-8">
+      <SectionTitle title="Clientes também viram" subtitle="" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {products.map((product) => (
           <Cards key={product.id} product={product} />
