@@ -1,6 +1,8 @@
 const productsServices = [
   {
     id: 1,
+    rating: 0,
+    reviews: 0,
     title: "Mesa de Som Profissional",
     description: "Mesa de som profissional para estúdios e eventos.",
     category: "mesa-de-som",
@@ -12,6 +14,8 @@ const productsServices = [
   },
   {
     id: 2,
+    rating: 4,
+    reviews: 6,
     title: "Caixas de Som Profissionais",
     description: "Caixas de som potentes para ambientes grandes.",
     category: "caixas-de-som",
@@ -19,6 +23,8 @@ const productsServices = [
   },
   {
     id: 3,
+    rating: 4,
+    reviews: 6,
     title: "Subwoofers",
     description: "Subwoofers para graves profundos e potentes.",
     category: "subwoofers",

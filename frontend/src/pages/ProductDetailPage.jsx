@@ -5,6 +5,7 @@ import SectionTitle from "components/SectionTitle";
 import Carousel from "components/ProductDetail/carousel";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "components/WhatsAppButton";
+import Rating from "components/ProductDetail/Ratings";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -39,8 +40,11 @@ const ProductDetailPage = () => {
             <Carousel images={product.images} />
           </div>
         </div>
-        <div className="container p-4  flex md:justify-center ssm: justify-end">
-          <div className="w-1/2 flex justify-end">
+        <div className="container p-4  flex md:justify-center ssm: justify-between">
+          <div className="w-1/2 flex justify-between">
+            <div className="w-1/2">
+              <Rating rating={product.rating} reviews={product.reviews} />
+            </div>
             <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
           </div>
         </div>
