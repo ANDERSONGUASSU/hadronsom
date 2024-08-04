@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import WhatsAppButton from "components/WhatsAppButton";
+import Rating from "components/ProductDetail/Ratings";
 
 const Cards = ({ product }) => {
   return (
@@ -20,7 +21,10 @@ const Cards = ({ product }) => {
           <p className="text-sm text-gray-500">{product.category}</p>
         </div>
       </Link>
-      <div className="p-4 flex justify-end">
+      <div className="p-4 flex justify-between">
+        <div>
+          <Rating rating={product.rating} reviews={product.reviews} productId={product.id} />
+        </div>
         <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
       </div>
     </div>
@@ -33,6 +37,8 @@ Cards.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    reviews: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };

@@ -41,7 +41,7 @@ const Carousel = ({ images }) => {
               >
                 <img
                   src={image}
-                  className="w-full h-full md:cursor-none"
+                  className="w-full h-full md:cursor-none rounded-xl"
                   alt={`Slide ${index + 1}`}
                   draggable={false}
                   onMouseLeave={handleMouseLeave}

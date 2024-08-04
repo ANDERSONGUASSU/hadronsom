@@ -9,6 +9,7 @@ import Rating from "components/ProductDetail/Ratings";
 import DetailedDescription from "components/ProductDetail/DetailedDescription";
 import Specifications from "components/ProductDetail/Specifications";
 import TechnicalDetails from "components/ProductDetail/TechnicalDetails";
+import PackagesSection from "components/Home/PackagesSection";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -56,6 +57,7 @@ const ProductDetailPage = () => {
           <DetailedDescription detailedDescription={product.detailedDescription} />
           <Specifications specifications={product.specifications} />
           <TechnicalDetails technicalDetails={product.technicalDetails} />
+          <PackagesSection />
         </div>
       </div>
     </>

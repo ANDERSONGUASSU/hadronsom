@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Rating from "components/ProductDetail/Ratings";
+import WhatsAppButton from "components/WhatsAppButton";
 
 const List = ({ product }) => {
   return (
@@ -13,6 +15,12 @@ const List = ({ product }) => {
         <h2 className="md:text-xl font-bold mb-2">{product.title}</h2>
         <p className="text-gray-600 font-light mb-4">{product.description}</p>
         <p className="text-sm font-light text-gray-500">{product.category}</p>
+        <div className="p-4 flex justify-between gap-4">
+          <div>
+            <Rating rating={product.rating} reviews={product.reviews} productId={product.id} />
+          </div>
+          <WhatsAppButton phone="5514998163835" message="Olá, preciso de ajuda!" />
+        </div>
       </div>
     </div>
   );
@@ -20,9 +28,12 @@ const List = ({ product }) => {
 
 List.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
+    rating: PropTypes.string.isRequired,
+    reviews: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
 };

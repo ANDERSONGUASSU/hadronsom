@@ -34,7 +34,7 @@ const Sidebar = ({ setSelectedCategory }) => {
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+            className="block w-full text-left px-4 py-2 hover:bg-gray-100 focus:text-primary"
           >
             {category.label}
           </button>
