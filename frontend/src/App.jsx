@@ -11,6 +11,7 @@ import ProductDetailPage from "pages/ProductDetailPage";
 import "./App.css";
 import FloatingWhatsAppButton from "components/FloatingWhatsAppButton";
 import ProductReviewPage from "pages/ProductReviewPage";
+import routes from "routes/routes";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -32,12 +33,12 @@ const App = () => {
         <Header />
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/produtos" element={<ProductsServicesPage />} />
-            <Route path="/produtos/:id" element={<ProductDetailPage />} />
-            <Route path="/produtos/:id/avaliar" element={<ProductReviewPage />} />
-            <Route path="/sobre-nos" element={<AboutPage />} />
-            <Route path="/contato" element={<ContactPage />} />
+            <Route path={routes.home} element={<HomePage />} />
+            <Route path={routes.productsServicesPage} element={<ProductsServicesPage />} />
+            <Route path={routes.productDetailPage} element={<ProductDetailPage />} />
+            <Route path={routes.productReviewPage} element={<ProductReviewPage />} />
+            <Route path={routes.aboutPage} element={<AboutPage />} />
+            <Route path={routes.contactPage} element={<ContactPage />} />
           </Routes>
         </main>
         <FloatingWhatsAppButton />

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { BiSolidRightArrowAlt } from "react-icons/bi";
 
@@ -15,9 +16,9 @@ const PackagesSectionCard = ({ img, title, coverage, description }) => {
         <h2 className="md:text-3xl ssm:text-2xl font-bold text-center">{coverage}</h2>
       </div>
       <p className="text-lg card-body text-center">{description}</p>
-      <a role="button" className="btn btn-primary text-base-100 mt-4 self-start">
+      <Link to="/pacotes" role="button" className="btn btn-primary text-base-100 mt-4 self-start">
         Saiba mais <BiSolidRightArrowAlt className="text-xl ml-2" />
-      </a>
+      </Link>
     </div>
   );
 };

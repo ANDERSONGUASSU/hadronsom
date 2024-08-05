@@ -1,14 +1,11 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import routes from "routes/routes";
 
 const FloatingWhatsAppButton = () => {
   return (
-    <Link
-      to="https://api.whatsapp.com/send/?phone=5514998163835&text&type=phone_number&app_absent=0"
-      target="_blank"
-    >
+    <a href={routes.whatsapp} target="_blank" rel="noopener noreferrer">
       <motion.div
         style={{
           position: "fixed",
@@ -27,7 +24,7 @@ const FloatingWhatsAppButton = () => {
         }}
         whileHover={{ scale: 1.1 }}
         animate={{
-          y: [0, -10, 0], // Valores para mover para cima e para baixo
+          y: [0, -10, 0],
         }}
         transition={{
           duration: 1,
@@ -38,7 +35,7 @@ const FloatingWhatsAppButton = () => {
       >
         <FaWhatsapp color="white" size="30px" />
       </motion.div>
-    </Link>
+    </a>
   );
 };
 
