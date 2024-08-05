@@ -1,4 +1,4 @@
-import Hero from "components/Home/Hero";
+// import Hero from "components/Home/Hero";
 import Features from "components/Home/Features";
 import BannerContact from "components/Home/BannerContact";
 import FAQSection from "components/Home/FAQ";
@@ -8,7 +8,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Features />
       <BannerContact />
       <FAQSection />
