@@ -18,7 +18,7 @@ const Hero = () => {
     }
   }, []);
   return (
-    <div className="hero w-full min-h-screen" style={{ backgroundImage: `url(${igrejaImage})` }}>
+    <div className="hero w-svw min-h-screen" style={{ backgroundImage: `url(${igrejaImage})` }}>
       <div className="hero-overlay bg-gradient-to-b from-transparent to-primary-content opacity-100"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-xl">
