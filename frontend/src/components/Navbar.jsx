@@ -68,13 +68,13 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end space-x-4 md:mr-0 ssm:mr-10">
-        <a href={routes.facebook} className="text-2xl">
+        <a href={routes.facebook} className="text-2xl" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-color" />
         </a>
-        <a href={routes.instagram} className="text-2xl">
+        <a href={routes.instagram} className="text-2xl" target="_blank" rel="noopener noreferrer">
           <FaInstagram className="text-color" />
         </a>
-        <a href={routes.whatsapp} className="text-2xl">
+        <a href={routes.whatsapp} className="text-2xl" target="_blank" rel="noopener noreferrer">
           <FaWhatsapp className="text-color" />
         </a>
       </div>

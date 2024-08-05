@@ -25,10 +25,10 @@ const Footer = () => {
       </nav>
       <nav>
         <div className="grid grid-flow-col gap-4">
-          <a href={routes.facebook} className="text-2xl">
+          <a href={routes.facebook} className="text-2xl" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="text-base-100" />
           </a>
-          <a href={routes.instagram} className="text-2xl">
+          <a href={routes.instagram} className="text-2xl" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="text-base-100" />
           </a>
           <a href={routes.whatsapp} target="_blank" rel="noopener noreferrer" className="text-2xl">
