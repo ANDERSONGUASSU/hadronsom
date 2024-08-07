@@ -29,7 +29,7 @@ const ProductsServices = () => {
     <div className="container mx-auto py-8 flex">
       <Sidebar setSelectedCategory={setSelectedCategory} />
 
-      <div className="flex-grow container mt-14 ssm:ml-10 sm:ml-16 lg:ml-0">
+      <div className="flex-grow container mt-14 ">
         <div className="breadcrumbs text-sm">
           <ul>
             <li>

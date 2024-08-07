@@ -7,7 +7,6 @@ const categories = [
   { id: "mesa-de-som", label: "Mesa de Som" },
   { id: "caixas-de-som", label: "Caixas de Som" },
   { id: "subwoofers", label: "Subwoofers" },
-  // Adicione mais categorias conforme necessário
 ];
 
 const Sidebar = ({ setSelectedCategory }) => {
@@ -20,13 +19,20 @@ const Sidebar = ({ setSelectedCategory }) => {
   return (
     <div
       className={`fixed top-14 left-0 w-64 h-3/5 bg-base-200 shadow-lg transform ${
-        isMenuOpen ? "translate-x-0" : "-translate-x-48"
+        isMenuOpen ? "translate-x-0" : "-translate-x-64"
       } transition-transform duration-300 z-40`}
     >
       <div className="flex justify-between items-center p-4 border-b">
         <h2 className="text-xl font-bold">Categorias</h2>
         <button onClick={toggleMenu} className="text-gray-600">
-          {isMenuOpen ? <FaAngleDoubleLeft size={24} /> : <FaAngleDoubleRight size={24} />}
+          {isMenuOpen ? (
+            <FaAngleDoubleLeft size={24} />
+          ) : (
+            <FaAngleDoubleRight
+              size={24}
+              className="translate-x-10 ssm:translate-y-5 md:translate-y-0"
+            />
+          )}
         </button>
       </div>
       <div className="p-4">

@@ -5,8 +5,8 @@ import PackagesSection from "./PackagesSection";
 
 const Features = () => {
   return (
-    <section className="py-5 -mt-36 relative z-20">
-      <div className="md:container ssm:container-lg mx-auto shadow-slate-600 shadow-md bg-base-100 rounded-lg">
+    <section className="container -mt-36 relative z-20 w-svw">
+      <div className="shadow-slate-600 shadow-md bg-base-100 rounded-lg">
         <AboutSection />
         <ProductsServicesSection />
         <PackagesSection />
