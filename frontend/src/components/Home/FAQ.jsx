@@ -34,7 +34,7 @@ const FAQSection = () => {
 
   return (
     <section className="py-4">
-      <div className="container">
+      <div className="md:container">
         <SectionTitle
           title="Perguntas Frequentes"
           subtitle="Encontre abaixo respostas para as perguntas mais comuns sobre nossos serviços."

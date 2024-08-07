@@ -37,7 +37,7 @@ const PackagesSection = () => {
   return (
     <div className="py-8">
       <SectionTitle
-        title="Conheça nossos pacotes"
+        title="Nossos pacotes"
         subtitle={<>Temos os melhores pacotes para atender suas necessidades.</>}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
