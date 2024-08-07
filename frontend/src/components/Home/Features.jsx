@@ -5,7 +5,7 @@ import PackagesSection from "./PackagesSection";
 
 const Features = () => {
   return (
-    <section className="container -mt-36 relative z-20 w-svw">
+    <section className="md:container -mt-36 relative z-20 w-svw">
       <div className="shadow-slate-600 shadow-md bg-base-100 rounded-lg">
         <AboutSection />
         <ProductsServicesSection />
