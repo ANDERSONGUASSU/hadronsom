@@ -1,8 +1,8 @@
 import ProductsServices from "components/ProductsServices/ProductsServices";
 import React from "react";
 
-const ProductsServicesPage = () => {
+const ProductsPage = () => {
   return <ProductsServices />;
 };
 
-export default ProductsServicesPage;
+export default ProductsPage;

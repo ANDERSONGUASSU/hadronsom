@@ -2,7 +2,7 @@ const routes = {
   home: "/",
   packages: "/pacotes",
   notFound: "*",
-  productsServicesPage: "/produtos",
+  productsPage: "/produtos",
   productDetailPage: "/produtos/:id",
   productReviewPage: "/produtos/:id/avaliar",
   aboutPage: "/sobre-nos",

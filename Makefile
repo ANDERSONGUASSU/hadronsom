@@ -18,13 +18,19 @@ show-logs:
 	docker compose logs
 
 migrate:
-	docker compose exec api python3 manage.py migrate
+	docker-compose exec api python3 manage.py migrate
 
 makemigrations:
-	docker campose exec api python3 manage.py makemigrations
+	docker compose exec api python3 manage.py makemigrations
 
+showmigrations:
+	docker compose exec api python3 manage.py showmigrations
+	
 superuser:
 	docker compose exec api python3 manage.py createsuperuser
+
+app:
+	docker compose exec api python3 manage.py startapp $(name)
 
 collectstatic:
 	docker compose exec api python3 manage.py collectstatic

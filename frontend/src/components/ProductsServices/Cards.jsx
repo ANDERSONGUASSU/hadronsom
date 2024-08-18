@@ -8,12 +8,8 @@ const Cards = ({ product }) => {
   return (
     <div className="card shadow-md rounded-lg overflow-hidden">
       <Link to={`/produtos/${product.id}`}>
-        <div className="h-64">
-          <img
-            src={product.images[0]}
-            alt={product.title}
-            className="w-full h-full object-cover object-center"
-          />
+        <div className="">
+          <img src={product.images[0]} alt={product.title} className="w-full" />
         </div>
         <div className="p-4">
           <h2 className="text-xl font-bold mb-2">{product.title}</h2>

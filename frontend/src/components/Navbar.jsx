@@ -43,7 +43,7 @@ const DesktopMenu = memo(() => {
     <div className="hidden lg:flex">
       <ul className="menu menu-horizontal px-1">
         <NavItem to={routes.home}>Home</NavItem>
-        <NavItem to={routes.productsServicesPage}>Produto & Serviços</NavItem>
+        <NavItem to={routes.productsPage}>Produtos</NavItem>
         <NavItem to={routes.packages}>Nossos pacotes</NavItem>
         <NavItem to={routes.aboutPage}>Sobre nós</NavItem>
         <NavItem to={routes.contactPage}>Contato</NavItem>
@@ -54,7 +54,7 @@ const DesktopMenu = memo(() => {
 
 const NavItem = ({ to, children }) => (
   <li>
-    <Link to={to} className="text-primary-content focus:text-primary">
+    <Link to={to} className="text-base-100 focus:text-primary">
       {children}
     </Link>
   </li>
@@ -76,7 +76,7 @@ const DropdownMenu = memo(() => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-primary-content"
       >
         <NavItem to={routes.home}>Home</NavItem>
-        <NavItem to={routes.productsServicesPage}>Produto & Serviços</NavItem>
+        <NavItem to={routes.productsPage}>Produtos</NavItem>
         <NavItem to={routes.packages}>Nossos pacotes</NavItem>
         <NavItem to={routes.aboutPage}>Sobre nós</NavItem>
         <NavItem to={routes.contactPage}>Contato</NavItem>

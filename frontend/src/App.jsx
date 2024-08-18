@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import Loading from "components/Loading";
 import AboutPage from "pages/AboutPage";
-import ProductsServicesPage from "pages/ProductsServicesPage";
+import ProductsPage from "pages/ProductsPage";
 import ProductDetailPage from "pages/ProductDetailPage";
 import "./App.css";
 import FloatingWhatsAppButton from "components/FloatingWhatsAppButton";
@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -34,7 +34,7 @@ const App = () => {
         <main className="flex-grow">
           <Routes>
             <Route path={routes.home} element={<HomePage />} />
-            <Route path={routes.productsServicesPage} element={<ProductsServicesPage />} />
+            <Route path={routes.productsPage} element={<ProductsPage />} />
             <Route path={routes.productDetailPage} element={<ProductDetailPage />} />
             <Route path={routes.productReviewPage} element={<ProductReviewPage />} />
             <Route path={routes.aboutPage} element={<AboutPage />} />
