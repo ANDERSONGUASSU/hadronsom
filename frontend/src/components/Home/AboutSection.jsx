@@ -1,39 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaBoxOpen, FaTools, FaTruck, FaWrench } from "react-icons/fa";
 import SectionTitle from "../SectionTitle";
 import AboutSectionCard from "./AboutSectionCard";
 import AboutSectionInfo from "./AboutSectionInfo";
+import axios from "axios";
 
 const AboutSection = () => {
-  const cards1 = [
-    {
-      icon: FaBoxOpen,
-      title: "Fabricação de Caixas de Som",
-      description:
-        "Produzimos caixas de som de alta qualidade, personalizadas para atender às suas necessidades específicas.",
-    },
-    {
-      icon: FaTools,
-      title: "Instalações",
-      description:
-        "Instalamos sistemas de som em diversos tipos de ambientes, garantindo a melhor acústica possível.",
-    },
-  ];
+  const [aboutData, setAboutData] = useState(null);
 
-  const cards2 = [
-    {
-      icon: FaTruck,
-      title: "Visitas Técnicas",
-      description:
-        "Realizamos visitas técnicas grátis em todo o estado de São Paulo para avaliar suas necessidades de som.",
-    },
-    {
-      icon: FaWrench,
-      title: "Manutenção",
-      description:
-        "Oferecemos serviços completos de manutenção e reparo para todos os nossos produtos.",
-    },
-  ];
+  useEffect(() => {
+    axios
+      .get("/api/v1/about-section/")
+      .then((response) => {
+        if (response.data && response.data.length > 0) {
+          setAboutData(response.data[0]);
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar dados:", error);
+      });
+  }, []);
+
+  if (!aboutData) {
+    return <div>Carregando...</div>;
+  }
+
+  const iconMap = {
+    FaBoxOpen: FaBoxOpen,
+    FaTools: FaTools,
+    FaTruck: FaTruck,
+    FaWrench: FaWrench,
+  };
+
   return (
     <section className="bg-base-100">
       <SectionTitle
@@ -47,29 +45,35 @@ const AboutSection = () => {
       />
 
       <div className="container grid md:grid-cols-3">
-        <AboutSectionInfo
-          title="Somos uma empresa que faz o seu som"
-          description="Há mais de 20 anos no mercado...."
-        />
-        <div className="col-span-1">
-          {cards1.map((card, index) => (
-            <AboutSectionCard
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
-        </div>
-        <div className="col-span-1 md:-mt-10">
-          {cards2.map((card, index) => (
-            <AboutSectionCard
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
+        <AboutSectionInfo title={aboutData.title_info} description={aboutData.description_info} />
+        <div className="col-span-2 grid grid-cols-2 gap-4">
+          <div className="col-1">
+            {aboutData.cards &&
+              aboutData.cards
+                .slice(0, 2)
+                .map((card, index) => (
+                  <AboutSectionCard
+                    key={index}
+                    icon={iconMap[card.icon]}
+                    title={card.title}
+                    description={card.description}
+                  />
+                ))}
+          </div>
+          <div className="col-2 -mt-10">
+            {" "}
+            {aboutData.cards &&
+              aboutData.cards
+                .slice(2)
+                .map((card, index) => (
+                  <AboutSectionCard
+                    key={index}
+                    icon={iconMap[card.icon]}
+                    title={card.title}
+                    description={card.description}
+                  />
+                ))}
+          </div>
         </div>
       </div>
     </section>
