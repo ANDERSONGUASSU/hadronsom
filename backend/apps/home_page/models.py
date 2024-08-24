@@ -2,6 +2,7 @@
 
 from django.db import models
 from apps.icons.models import IconFa
+from django.core.exceptions import ValidationError
 
 
 class Hero(models.Model):
@@ -39,6 +40,43 @@ class AboutCard(models.Model):
 
     about_section = models.ForeignKey(AboutSection, related_name='cards', on_delete=models.CASCADE)
     title = models.CharField(max_length=100, verbose_name="Título do Card", default="Digite o título")
+    description = models.TextField(verbose_name="Descrição do Card", default="Digite sua descrição")
+    icon = models.ForeignKey(IconFa, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class ProductsServicesSection(models.Model):
+    title_info = models.CharField(
+        max_length=100,
+        verbose_name="Título da Informação",
+        default="Conheca nossos produtos",
+    )
+    description_info = models.TextField(
+        verbose_name="Descrição da Informação",
+        default="Caixas de som, equipamentos, móveis para seu som e muito mais",
+    )
+    image1 = models.ImageField(upload_to='products_services_section/')
+    alt_text1 = models.CharField(max_length=255, blank=True, null=True)
+    image2 = models.ImageField(upload_to='products_services_section/')
+    alt_text2 = models.CharField(max_length=255, blank=True, null=True)
+
+    def clean(self):
+        if not self.image1 or not self.image2:
+            raise ValidationError("A secão deve ter duas imagens.")
+
+    def __str__(self):
+        return self.title_info
+
+
+class ProducstsServicesCard(models.Model):
+    products_services_section = models.ForeignKey(
+        ProductsServicesSection,
+        related_name='cards',
+        on_delete=models.CASCADE,
+    )
+    title = models.CharField(max_length=100, verbose_name="Título do card", default="Ditite o título")
     description = models.TextField(verbose_name="Descrição do Card", default="Digite sua descrição")
     icon = models.ForeignKey(IconFa, on_delete=models.SET_NULL, null=True)
 

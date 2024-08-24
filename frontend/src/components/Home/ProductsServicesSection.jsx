@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "../SectionTitle";
-import ProductsServicesImg from "./ProductsServivesImg";
+import ProductsServicesImg from "./ProductsServicesImg";
 import ProductsServicesInfo from "./ProductsServicesInfo";
 import { FaVolumeUp, FaPaintBrush, FaCog, FaUsersCog, FaCut, FaVolumeMute } from "react-icons/fa";
 import ProductsServicesCard from "./ProductsServicesCard";

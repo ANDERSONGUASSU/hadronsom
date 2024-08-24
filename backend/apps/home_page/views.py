@@ -3,8 +3,8 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
-from .models import Hero, AboutSection
-from .serializers import HeroSerializer, AboutSectionSerializer
+from .models import Hero, AboutSection, ProductsServicesSection
+from .serializers import HeroSerializer, AboutSectionSerializer, ProdutcsServicesSerializer
 
 
 class HeroView(APIView):
@@ -21,3 +21,8 @@ class HeroView(APIView):
 class AboutSectionListView(generics.ListAPIView):
     queryset = AboutSection.objects.all()
     serializer_class = AboutSectionSerializer
+
+
+class ProductsServicesView(generics.ListAPIView):
+    queryset = ProductsServicesSection.objects.all()
+    serializer_class = ProdutcsServicesSerializer
