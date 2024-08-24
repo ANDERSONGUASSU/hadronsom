@@ -1,9 +1,11 @@
+// frontend/src/components/AboutSection.jsx
+
 import React, { useEffect, useState } from "react";
-import { FaBoxOpen, FaTools, FaTruck, FaWrench } from "react-icons/fa";
 import SectionTitle from "../SectionTitle";
 import AboutSectionCard from "./AboutSectionCard";
 import AboutSectionInfo from "./AboutSectionInfo";
 import axios from "axios";
+import IconFa from "components/Icons/IconFa";
 
 const AboutSection = () => {
   const [aboutData, setAboutData] = useState(null);
@@ -24,13 +26,6 @@ const AboutSection = () => {
   if (!aboutData) {
     return <div>Carregando...</div>;
   }
-
-  const iconMap = {
-    FaBoxOpen: FaBoxOpen,
-    FaTools: FaTools,
-    FaTruck: FaTruck,
-    FaWrench: FaWrench,
-  };
 
   return (
     <section className="bg-base-100">
@@ -54,21 +49,20 @@ const AboutSection = () => {
                 .map((card, index) => (
                   <AboutSectionCard
                     key={index}
-                    icon={iconMap[card.icon]}
+                    icon={<IconFa iconName={card.icon} />}
                     title={card.title}
                     description={card.description}
                   />
                 ))}
           </div>
           <div className="col-2 -mt-10">
-            {" "}
             {aboutData.cards &&
               aboutData.cards
                 .slice(2)
                 .map((card, index) => (
                   <AboutSectionCard
                     key={index}
-                    icon={iconMap[card.icon]}
+                    icon={<IconFa iconName={card.icon} />}
                     title={card.title}
                     description={card.description}
                   />

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
-const AboutSectionCard = ({ icon: Icon, title, description }) => {
+const AboutSectionCard = ({ icon, title, description }) => {
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
 
   const handleCardClick = () => {
@@ -23,7 +23,7 @@ const AboutSectionCard = ({ icon: Icon, title, description }) => {
             <div className="flex items-center">
               <div className="avatar mr-4">
                 <div className="w-12 h-12 rounded-full bg-base-100 hover:bg-primary relative flex items-center justify-center text-primary hover:text-base-100">
-                  <Icon className="text-3xl absolute inset-0 m-auto hover:scale-105" />
+                  <div className="text-3xl absolute inset-2 m-auto hover:scale-105">{icon}</div>
                 </div>
               </div>
               {title}
@@ -40,7 +40,7 @@ const AboutSectionCard = ({ icon: Icon, title, description }) => {
 };
 
 AboutSectionCard.propTypes = {
-  icon: PropTypes.func.isRequired,
+  icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };

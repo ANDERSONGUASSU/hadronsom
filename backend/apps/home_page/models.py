@@ -1,6 +1,7 @@
 # backend/apps/home_page/models.py
 
 from django.db import models
+from apps.icons.models import IconFa
 
 
 class Hero(models.Model):
@@ -35,22 +36,11 @@ class AboutSection(models.Model):
 
 
 class AboutCard(models.Model):
-    ICON_CHOICES = [
-        ('FaBoxOpen', 'FaBoxOpen'),
-        ('FaTools', 'FaTools'),
-        ('FaTruck', 'FaTruck'),
-        ('FaWrench', 'FaWrench'),
-    ]
 
     about_section = models.ForeignKey(AboutSection, related_name='cards', on_delete=models.CASCADE)
     title = models.CharField(max_length=100, verbose_name="Título do Card", default="Digite o título")
     description = models.TextField(verbose_name="Descrição do Card", default="Digite sua descrição")
-    icon = models.CharField(
-        max_length=50,
-        choices=ICON_CHOICES,
-        verbose_name="Ícone do Card",
-        default="FaBoxOpen"
-    )
+    icon = models.ForeignKey(IconFa, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.title

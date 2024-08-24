@@ -12,6 +12,8 @@ class HeroSerializer(serializers.ModelSerializer):
 
 
 class AboutSectionCardSerializer(serializers.ModelSerializer):
+    icon = serializers.CharField(source='icon.icon', read_only=True)
+
     class Meta:
         model = AboutCard
         fields = ['icon', 'title', 'description']

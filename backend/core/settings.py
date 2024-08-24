@@ -48,6 +48,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "apps.home_page",
+    "apps.icons",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
