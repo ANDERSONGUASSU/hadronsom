@@ -1,73 +1,63 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SectionTitle from "../SectionTitle";
 import ProductsServicesImg from "./ProductsServicesImg";
 import ProductsServicesInfo from "./ProductsServicesInfo";
-import { FaVolumeUp, FaPaintBrush, FaCog, FaUsersCog, FaCut, FaVolumeMute } from "react-icons/fa";
 import ProductsServicesCard from "./ProductsServicesCard";
+import axios from "axios";
+import IconFa from "components/Icons/IconFa";
 
-const featureItems = [
-  {
-    icon: FaVolumeUp,
-    title: "Som Imersivo",
-    description:
-      "Desfrute de uma experiência sonora envolvente com a qualidade superior das nossas caixas de som Hádron, perfeitas para qualquer ambiente.",
-  },
-  {
-    icon: FaPaintBrush,
-    title: "Design Elegante",
-    description:
-      "Nossas caixas de som combinam um design moderno e sofisticado com uma acústica excepcional, se integrando harmoniosamente ao seu espaço.",
-  },
-  {
-    icon: FaCog,
-    title: "Tecnologia de Ponta",
-    description:
-      "Desfrute da mais avançada tecnologia sonora com nossas caixas de som, que oferecem clareza e potência para qualquer tipo de ambiente.",
-  },
-  {
-    icon: FaUsersCog,
-    title: "Equipe Qualificada",
-    description:
-      "Nossa equipe de manutenção é altamente qualificada, garantindo serviços de reparo e otimização com excelência.",
-  },
-  {
-    icon: FaCut,
-    title: "Recortes em MDF",
-    description:
-      "Oferecemos serviços de recorte em MDF, perfeitos para a construção de caixas de som e outros projetos acústicos.",
-  },
-  {
-    icon: FaVolumeMute,
-    title: "Isolamento Acústico",
-    description:
-      "Especializamos em isolamento acústico, garantindo um ambiente livre de ruídos indesejados e melhor qualidade sonora.",
-  },
-];
 const ProductsServicesSection = () => {
+  const [productsServicesData, setProductsServicesData] = useState(null);
+  const [img1, setImg1] = useState("");
+  const [img2, setImg2] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("/api/v1/products-services-section/")
+      .then((response) => {
+        if (response.data && response.data.length > 0) {
+          const data = response.data[0];
+          setProductsServicesData(data);
+          setImg1(data.image1);
+          setImg2(data.image2);
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar dados:", error);
+      });
+  }, []);
+
+  if (!productsServicesData) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <>
       <SectionTitle
         title="Produtos & Serviços"
-        subtitle={<>Os melhores produtos e serviços que a Hádrom tem a oferecer.</>}
+        subtitle={<>Os melhores produtos e serviços que a Hadron tem a oferecer.</>}
       />
       <div className="container grid md:grid-cols-3 gap-6">
-        {featureItems.map((item, index) => (
-          <div key={index}>
-            <ProductsServicesCard
-              key={index}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-            />
-          </div>
+        {productsServicesData.cards.map((card, index) => (
+          <ProductsServicesCard
+            key={index}
+            icon={<IconFa iconName={card.icon} />}
+            title={card.title}
+            description={card.description}
+          />
         ))}
       </div>
       <div className="container grid md:grid-cols-3">
         <ProductsServicesInfo
-          title="Conheça nossos produtos"
-          description="Temos Caixas de som, equipamentos, móveis para seu som e muito mais"
+          title={productsServicesData.title_info}
+          description={productsServicesData.description_info}
         />
-        <ProductsServicesImg />
+        <ProductsServicesImg
+          img1={img1}
+          img2={img2}
+          alt1={productsServicesData.alt_text1}
+          alt2={productsServicesData.alt_text2}
+        />
       </div>
     </>
   );

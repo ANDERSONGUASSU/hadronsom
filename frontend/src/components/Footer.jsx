@@ -5,7 +5,7 @@ import routes from "routes/routes";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-center bg-primary-content text-base-content rounded lg:p-10  ssm:p-2 mt-auto">
+    <footer className="footer footer-center bg-primary-content text-base-content lg:p-10  ssm:p-2 mt-auto">
       <nav className="grid grid-flow-col gap-4 text-base-100">
         <Link to={routes.home} className="link link-hover">
           Home

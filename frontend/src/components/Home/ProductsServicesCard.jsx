@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const ProductsServicesCard = ({ icon: Icon, title, description }) => {
+const ProductsServicesCard = ({ icon, title, description }) => {
   return (
     <motion.div
       className="m-4"
@@ -15,7 +15,7 @@ const ProductsServicesCard = ({ icon: Icon, title, description }) => {
           <div className="flex items-center mb-4">
             <div className="avatar mr-4">
               <div className="w-12 h-12 rounded-full bg-base-100 hover:bg-primary relative flex items-center justify-center text-primary hover:text-base-100">
-                <Icon className="text-3xl absolute inset-0 m-auto" />
+                <div className="text-3xl absolute inset-2 m-auto hover:scale-105">{icon}</div>
               </div>
             </div>
             <h2 className="card-title">{title}</h2>
@@ -28,7 +28,7 @@ const ProductsServicesCard = ({ icon: Icon, title, description }) => {
 };
 
 ProductsServicesCard.propTypes = {
-  icon: PropTypes.func.isRequired,
+  icon: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };

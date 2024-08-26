@@ -26,3 +26,14 @@ class AboutSectionListView(generics.ListAPIView):
 class ProductsServicesView(generics.ListAPIView):
     queryset = ProductsServicesSection.objects.all()
     serializer_class = ProdutcsServicesSerializer
+
+    def get(self, request, *args, **kwargs):
+        products_services = self.get_queryset()
+        serializer = self.get_serializer(products_services, many=True)
+        data = serializer.data
+
+        for item, product_service in zip(data, products_services):
+            item['image1'] = product_service.image1.url if product_service.image1 else None
+            item['image2'] = product_service.image2.url if product_service.image2 else None
+
+        return Response(data)
