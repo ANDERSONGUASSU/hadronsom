@@ -44,11 +44,15 @@ SITE_ID = 1
 THIRD_PARTY_APPS = [
     "rest_framework",
     "corsheaders",
+    "imagefield",
 ]
 
 LOCAL_APPS = [
     "apps.home_page",
     "apps.icons",
+    "apps.packages",
+    "apps.products",
+    "apps.reviews",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

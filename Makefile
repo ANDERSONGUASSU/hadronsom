@@ -29,11 +29,11 @@ showmigrations:
 superuser:
 	docker compose exec api python3 manage.py createsuperuser
 
-app:
-	docker compose exec api python3 manage.py startapp $(name)
-
 collectstatic:
 	docker compose exec api python3 manage.py collectstatic
+
+imagefields:
+	docker compose exec api python3 manage.py process_imagefields --all
 
 down-v:
 	docker compose down -v
@@ -43,4 +43,3 @@ volume:
 
 hadronsom-db:
 	docker compose exec postgres-db psql --username=andersonguassu --dbname=hadronsom
-
