@@ -9,12 +9,12 @@ const Cards = ({ product }) => {
     <div className="card shadow-md rounded-lg overflow-hidden">
       <Link to={`/produtos/${product.id}`}>
         <div className="">
-          <img src={product.images[0]} alt={product.title} className="w-full" />
+          <img src={product.images[0]} alt={product.name} className="w-full" />
         </div>
         <div className="p-4">
-          <h2 className="text-xl font-bold mb-2">{product.title}</h2>
+          <h2 className="text-xl font-bold mb-2">{product.name}</h2>
           <p className="text-gray-600 mb-4">{product.description}</p>
-          <p className="text-sm text-gray-500">{product.category}</p>
+          <p className="text-sm text-gray-500">{product.category.name}</p>
         </div>
       </Link>
       <div className="p-4 flex flex-col items-center">
@@ -32,7 +32,7 @@ const Cards = ({ product }) => {
 Cards.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     rating: PropTypes.string.isRequired,

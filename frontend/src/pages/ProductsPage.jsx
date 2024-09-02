@@ -1,4 +1,4 @@
-import ProductsServices from "components/ProductsServices/ProductsServices";
+import ProductsServices from "components/Products/ProductsServices";
 import React from "react";
 
 const ProductsPage = () => {

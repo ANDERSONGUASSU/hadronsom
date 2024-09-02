@@ -1,6 +1,6 @@
 # backend/apps/home_page/models.py
 from django.contrib import admin
-from .models import Hero, AboutSection, AboutCard, ProducstsServicesCard, ProductsServicesSection
+from .models import Hero, AboutSection, AboutCard, ProducstsServicesCard, ProductsServicesSection, FAQSection
 
 admin.site.register(Hero)
 
@@ -23,3 +23,6 @@ class CardInlineProductsServices(admin.StackedInline):
 @admin.register(ProductsServicesSection)
 class ProductsServicesSectionAdmin(admin.ModelAdmin):
     inlines = [CardInlineProductsServices]
+
+
+admin.site.register(FAQSection)

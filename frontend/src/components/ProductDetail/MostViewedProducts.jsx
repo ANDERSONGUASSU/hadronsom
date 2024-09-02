@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Cards from "components/ProductsServices/Cards";
+import Cards from "components/Products/Cards";
 import SectionTitle from "components/SectionTitle";
 
 const MostViewedProducts = ({ products }) => {

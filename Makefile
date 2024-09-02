@@ -17,6 +17,9 @@ down:
 show-logs:
 	docker compose logs
 
+show-logs-api:
+	docker compose logs api
+
 migrate:
 	docker-compose exec api python3 manage.py migrate
 

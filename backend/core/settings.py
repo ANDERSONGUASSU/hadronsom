@@ -1,6 +1,7 @@
 import environ
 import logging
 import logging.config
+import os
 from pathlib import Path
 from django.utils.log import DEFAULT_LOGGING
 
@@ -45,6 +46,7 @@ THIRD_PARTY_APPS = [
     "rest_framework",
     "corsheaders",
     "imagefield",
+    "colorfield",
 ]
 
 LOCAL_APPS = [
@@ -128,6 +130,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
 LANGUAGE_CODE = "pt-br"
 
 TIME_ZONE = "America/Sao_Paulo"
@@ -135,6 +141,8 @@ TIME_ZONE = "America/Sao_Paulo"
 USE_I18N = True
 
 USE_TZ = True
+
+USE_L10N = True
 
 
 # Static files (CSS, JavaScript, Images)

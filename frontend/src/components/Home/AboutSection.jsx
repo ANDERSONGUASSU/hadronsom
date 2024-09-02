@@ -41,7 +41,7 @@ const AboutSection = () => {
 
       <div className="container grid md:grid-cols-3">
         <AboutSectionInfo title={aboutData.title_info} description={aboutData.description_info} />
-        <div className="col-span-2 grid grid-cols-2 gap-4">
+        <div className="col-span-2 grid md:grid-cols-2 gap-4">
           <div className="col-1">
             {aboutData.cards &&
               aboutData.cards

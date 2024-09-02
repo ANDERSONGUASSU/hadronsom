@@ -3,8 +3,8 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
-from .models import Hero, AboutSection, ProductsServicesSection
-from .serializers import HeroSerializer, AboutSectionSerializer, ProdutcsServicesSerializer
+from .models import Hero, AboutSection, ProductsServicesSection, FAQSection
+from .serializers import HeroSerializer, AboutSectionSerializer, ProdutcsServicesSerializer, FAQSerializer
 
 
 class HeroView(APIView):
@@ -35,5 +35,17 @@ class ProductsServicesView(generics.ListAPIView):
         for item, product_service in zip(data, products_services):
             item['image1'] = product_service.image1.url if product_service.image1 else None
             item['image2'] = product_service.image2.url if product_service.image2 else None
+
+        return Response(data)
+
+
+class FAQView(generics.ListAPIView):
+    queryset = FAQSection.objects.all()
+    serializer_class = FAQSerializer
+
+    def get(self, request, *args, **kwargs):
+        faq = self.get_queryset()
+        serializer = self.get_serializer(faq, many=True)
+        data = serializer.data
 
         return Response(data)

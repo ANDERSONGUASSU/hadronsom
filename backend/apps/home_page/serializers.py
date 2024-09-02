@@ -1,7 +1,7 @@
 # backend/apps/home_page/serializers.py
 
 from rest_framework import serializers
-from .models import Hero, AboutSection, AboutCard, ProductsServicesSection, ProducstsServicesCard
+from .models import Hero, AboutSection, AboutCard, ProductsServicesSection, ProducstsServicesCard, FAQSection
 
 
 class HeroSerializer(serializers.ModelSerializer):
@@ -41,3 +41,9 @@ class ProdutcsServicesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductsServicesSection
         fields = ['title_info', 'description_info', 'image1', 'alt_text1', 'image2', 'alt_text2', 'cards']
+
+
+class FAQSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FAQSection
+        fields = ['question', 'answer']

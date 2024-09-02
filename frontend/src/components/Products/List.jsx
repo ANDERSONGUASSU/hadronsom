@@ -10,13 +10,13 @@ const List = ({ product }) => {
       <Link to={`/produtos/${product.id}`} className="flex justify-around">
         <img
           src={product.images[0]}
-          alt={product.title}
-          className="md:w-96 md:h-64 ssm:w-40 ssm:h-28 object-cover object-center mr-4 rounded-lg"
+          alt={product.name}
+          className="md:w-96  ssm:w-40 object-cover object-center mr-4 rounded-lg"
         />
         <div className="flex flex-col justify-around md:text-center">
-          <h2 className="md:text-xl font-bold mb-2">{product.title}</h2>
+          <h2 className="md:text-xl font-bold mb-2">{product.name}</h2>
           <p className="text-gray-600 font-light mb-4">{product.description}</p>
-          <p className="text-sm font-light text-gray-500">{product.category}</p>
+          <p className="text-sm font-light text-gray-500">{product.category.name}</p>
         </div>
       </Link>
       <div className="p-4 flex flex-col items-center gap-4">
@@ -34,7 +34,7 @@ const List = ({ product }) => {
 List.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     rating: PropTypes.string.isRequired,

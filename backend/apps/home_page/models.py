@@ -82,3 +82,15 @@ class ProducstsServicesCard(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class FAQSection(models.Model):
+    question = models.CharField(max_length=255, verbose_name="Pergunta")
+    answer = models.TextField(verbose_name="Resposta")
+
+    def __str__(self):
+        return self.question
+
+    class Meta:
+        verbose_name = "Perguntas frequentes"
+        verbose_name_plural = "Perguntas frequentes"

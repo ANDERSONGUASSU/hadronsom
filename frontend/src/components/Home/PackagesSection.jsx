@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "../SectionTitle";
 import PackagesSectionCard from "./PackagesSectionCard";
-import pacotes from "assets/img/pacotes.png";
+import pacotes from "assets/img/kit (1080 x 1320 px)/pacotes.png";
 
 const PackagesSection = () => {
   const packages = [

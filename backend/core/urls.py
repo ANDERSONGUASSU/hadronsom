@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('supersecret/', admin.site.urls),
     path('api/v1/', include('apps.home_page.urls')),
+    path('api/v1/', include('apps.products.urls')),
 ]
 
 if settings.DEBUG:
