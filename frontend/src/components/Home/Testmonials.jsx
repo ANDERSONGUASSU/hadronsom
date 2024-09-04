@@ -1,52 +1,21 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { ImQuotesRight } from "react-icons/im";
-import cl1 from "../../assets/img/cliente-1.jpg";
-import cl2 from "../../assets/img/cliente-2.png";
-
-const testimonials = [
-  {
-    name: "Pe. Tarcísio",
-    username: "Santuário Santa Teresinha - Cerqueira César - SP",
-    image: `${cl1}`,
-    text: "Som funcionando bem, com a graça de Deus.",
-  },
-  {
-    name: "Pe. Armandinho",
-    username: "Paróquia Santo Antônio - Jaú - SP",
-    image: `${cl2}`,
-    text: "Ficou tudo excelente, tudo muito, muito bom, temos só a agradecer.",
-  },
-  {
-    name: "Pe. Tarcísio",
-    username: "Santuário Santa Teresinha - Cerqueira César - SP",
-    image: `${cl1}`,
-    text: "Som funcionando bem, com a graça de Deus.",
-  },
-  {
-    name: "Pe. Armandinho",
-    username: "Paróquia Santo Antônio - Jaú - SP",
-    image: `${cl2}`,
-    text: "Ficou tudo excelente, tudo muito, muito bom, temos só a agradecer.",
-  },
-  {
-    name: "Pe. Tarcísio",
-    username: "Santuário Santa Teresinha - Cerqueira César - SP",
-    image: `${cl1}`,
-    text: "Som funcionando bem, com a graça de Deus.",
-  },
-  {
-    name: "Pe. Armandinho",
-    username: "Paróquia Santo Antônio - Jaú - SP",
-    image: `${cl2}`,
-    text: "Ficou tudo excelente, tudo muito, muito bom, temos só a agradecer.",
-  },
-];
 
 const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
   const swiperRef = useRef(null);
+
+  useEffect(() => {
+    fetch("/api/v1/testemonials-section/")
+      .then((response) => response.json())
+      .then((data) => {
+        setTestimonials(data);
+      })
+      .catch((error) => console.error("Erro ao buscar depoimentos:", error));
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -111,7 +80,7 @@ const Testimonials = () => {
                       <div className="avatar placeholder rounded-full w-32 h-32 bg-gray-300">
                         <img
                           className="w-full h-full rounded-full shadow-lg"
-                          src={testimonial.image}
+                          src={testimonial.avatar}
                           alt="avatar"
                         />
                       </div>
@@ -119,8 +88,10 @@ const Testimonials = () => {
                   </div>
                   <div className="card-body text-center mt-8">
                     <h4 className="card-title flex justify-center mb-0">{testimonial.name}</h4>
-                    <p>{testimonial.username}</p>
-                    <p className="mt-2 max-w-30 min-h-12">{testimonial.text}</p>
+                    <p>
+                      {testimonial.location} - {testimonial.city} - {testimonial.state}
+                    </p>
+                    <p className="mt-2 max-w-30 min-h-12">{testimonial.testimonials}</p>
                   </div>
                   <div className="card-footer">
                     <div className="flex justify-center">
