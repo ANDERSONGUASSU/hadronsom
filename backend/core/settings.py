@@ -1,3 +1,5 @@
+# backend/core/settings.py
+
 import environ
 import logging
 import logging.config
@@ -131,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, "locale"),
 ]
 
 LANGUAGE_CODE = "pt-br"

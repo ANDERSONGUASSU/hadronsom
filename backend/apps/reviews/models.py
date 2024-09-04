@@ -22,5 +22,5 @@ class Review(models.Model):
         return f"{self.user.username} - {self.product.name}"
 
     class Meta:
-        ordering = ['-created_at']
-        unique_together = ['user', 'product']
+        ordering = ["-created_at"]
+        unique_together = ["user", "product"]

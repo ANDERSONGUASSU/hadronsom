@@ -20,6 +20,9 @@ show-logs:
 show-logs-api:
 	docker compose logs api
 
+populate:
+	docker-compose exec api python3 manage.py utils/populate.py
+
 migrate:
 	docker-compose exec api python3 manage.py migrate
 
@@ -46,3 +49,6 @@ volume:
 
 hadronsom-db:
 	docker compose exec postgres-db psql --username=andersonguassu --dbname=hadronsom
+
+format:
+	docker compose exec api black .

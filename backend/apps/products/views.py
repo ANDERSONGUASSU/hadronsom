@@ -12,7 +12,7 @@ class CategoriesList(generics.ListAPIView):
 class CategoriesDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Categories.objects.all()
     serializer_class = CategoriesSerializer
-    lookup_field = 'slug'
+    lookup_field = "slug"
 
 
 class ProductsList(generics.ListAPIView):
@@ -25,7 +25,9 @@ class ProductsList(generics.ListAPIView):
         data = serializer.data
 
         for item, product in zip(data, products):
-            item['images'] = [image.image.url for image in product.product_image_set.all()]
+            item["images"] = [
+                image.image.url for image in product.product_image_set.all()
+            ]
 
         return Response(data)
 
@@ -33,7 +35,7 @@ class ProductsList(generics.ListAPIView):
 class ProductsDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
-    lookup_field = 'pk'
+    lookup_field = "pk"
 
     def get(self, request, *args, **kwargs):
         product = self.get_object()
@@ -42,6 +44,6 @@ class ProductsDetail(generics.RetrieveUpdateDestroyAPIView):
         serializer = self.get_serializer(product)
         data = serializer.data
 
-        data['images'] = [image.image.url for image in product.product_image_set.all()]
+        data["images"] = [image.image.url for image in product.product_image_set.all()]
 
         return Response(data)

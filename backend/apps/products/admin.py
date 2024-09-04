@@ -1,5 +1,12 @@
 from django.contrib import admin
-from .models import Categories, Products, ProductImage, Brand, ProductSpecification, Color
+from .models import (
+    Categories,
+    Products,
+    ProductImage,
+    Brand,
+    ProductSpecification,
+    Color,
+)
 
 
 class ProductSpecificationInline(admin.TabularInline):
@@ -20,9 +27,9 @@ class ColorInline(admin.TabularInline):
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     inlines = [ProductSpecificationInline, ProductImageInline, ColorInline]
-    list_display = ('name', 'category', 'brand', 'price', 'in_stock', 'on_sale')
-    list_filter = ('category', 'brand', 'in_stock', 'on_sale')
-    search_fields = ('name', 'description', 'detailed_description')
+    list_display = ("name", "category", "brand", "price", "in_stock", "on_sale")
+    list_filter = ("category", "brand", "in_stock", "on_sale")
+    search_fields = ("name", "description", "detailed_description")
 
 
 admin.site.register(Categories)
