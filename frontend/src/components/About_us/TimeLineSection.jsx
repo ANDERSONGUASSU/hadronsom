@@ -1,47 +1,56 @@
 import SectionTitle from "components/SectionTitle";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import logo from "assets/img/LOGO .jpg";
+import { Image } from "@nextui-org/react";
 
 const TimelineSection = () => {
   const timelineData = [
     {
       title: "Fundação da Hadron Som",
+      img: "https://nextui-docs-v2.vercel.app/images/hero-card-complete.jpeg",
       year: "1994",
       description:
         "A Hadron Som foi fundada por Daniel Rosolin em 1994, com a visão de criar soluções inovadoras e de alta qualidade em som e eletrônica.",
     },
     {
       title: "Lançamento das Primeiras Caixas de Som",
+      img: logo,
       year: "1996",
       description:
         "Em 1996, a Hadron Som lançou suas primeiras caixas de som, ganhando rapidamente reconhecimento pela excelente qualidade de áudio e design robusto.",
     },
     {
       title: "Introdução ao Mercado de Eventos",
+      img: logo,
       year: "2000",
       description:
         "A partir de 2000, a Hadron Som expandiu seus serviços para o mercado de eventos, fornecendo sonorização para shows, conferências e outros eventos de grande porte.",
     },
     {
       title: "Primeira Linha de Produtos Residenciais",
+      img: logo,
       year: "2005",
       description:
         "Em 2005, a Hadron Som lançou sua primeira linha de produtos residenciais, incluindo sistemas de som para home theater e dispositivos de áudio portáteis.",
     },
     {
       title: "Parceria com Grandes Empresas",
+      img: logo,
       year: "2010",
       description:
         "Em 2010, a Hadron Som firmou parcerias com grandes empresas de tecnologia, ampliando seu alcance e integrando suas soluções de áudio em diversos dispositivos.",
     },
     {
       title: "Lançamento do Sistema de Áudio Inteligente",
+      img: logo,
       year: "2015",
       description:
         "Em 2015, a Hadron Som revolucionou o mercado com o lançamento de um sistema de áudio inteligente, que se conecta a dispositivos móveis e oferece uma experiência de som personalizada.",
     },
     {
       title: "Expansão Internacional",
+      img: logo,
       year: "2020",
       description:
         "Em 2020, a Hadron Som expandiu suas operações para o mercado internacional, levando suas soluções de áudio inovadoras para clientes em todo o mundo.",
@@ -64,6 +73,14 @@ const TimelineSection = () => {
               >
                 <time className="font-mono italic">{item.year}</time>
                 <div className="text-lg font-black">{item.title}</div>
+                <div
+                  className={
+                    index % 2 === 0 ? "flex md:justify-end ssm:justify-start" : "flex justify-start"
+                  }
+                >
+                  <Image src={item.img} alt={item.title} width={300} height={200} isZoomed />
+                </div>
+
                 {item.description}
               </div>
               <hr />
