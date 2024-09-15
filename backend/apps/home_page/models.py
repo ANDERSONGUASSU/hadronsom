@@ -14,8 +14,8 @@ class Hero(models.Model):
     hero_bg_img = models.ImageField(upload_to="hero_bg_img/")
     is_active = models.BooleanField(default=False)
     hero_description = models.TextField(
-        default="Transforme qualquer espaço com as caixas de som Hádron.A combinação perfeita entre estilo e qualidade sonora que se adapta a todos os ambientes."
-    )  # NOQA
+        default="Transforme qualquer espaço com as caixas de som Hádron.A combinação perfeita entre estilo e qualidade sonora que se adapta a todos os ambientes."  # NOQA
+    )
 
     def save(self, *args, **kwargs):
         if self.is_active:

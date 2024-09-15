@@ -1,13 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import homeSlice from "../features/homeSlice";
 
-const initialState = {};
-
-const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+const rootReducer = combineReducers({
+  home: homeSlice,
+});
 
 export const store = configureStore({
   reducer: rootReducer,

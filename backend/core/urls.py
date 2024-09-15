@@ -7,6 +7,7 @@ urlpatterns = [
     path("supersecret/", admin.site.urls),
     path("api/v1/", include("apps.home_page.urls")),
     path("api/v1/", include("apps.products.urls")),
+    path("api/v1/", include("apps.about_page.urls")),
 ]
 
 if settings.DEBUG:

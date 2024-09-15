@@ -1,34 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import SectionTitle from "../SectionTitle";
-import equipe1 from "../../assets/img/daniel.jpg";
+import IconFa from "components/Icons/IconFa";
+import PropType from "prop-types";
 
-const teamMembers = [
-  {
-    name: "Daniel Rosolin",
-    position: "Proprietário",
-    image: `${equipe1}`,
-    description:
-      "Daniel é o proprietário da Hadron Som, liderando a empresa com visão e paixão pela excelência em soluções de som e eletrônica.",
-  },
-  {
-    name: "Daniel Rosolin",
-    position: "Engenheiro Elétrico",
-    image: `${equipe1}`,
-    description:
-      "Lucas é responsável por projetar e desenvolver sistemas elétricos inovadores que garantem a máxima eficiência e segurança nos projetos da Hadron Som.",
-  },
-  {
-    name: "Daniel Rosolin",
-    position: "Gerente de Projetos",
-    image: `${equipe1}`,
-    description:
-      "Mariana coordena todos os projetos da Hadron Som, garantindo que sejam entregues no prazo, dentro do orçamento e atendendo aos mais altos padrões de qualidade.",
-  },
-];
-
-const TeamSection = () => {
+const TeamSection = ({ teamMembers }) => {
   return (
     <>
       <section className="py-12">
@@ -45,20 +21,19 @@ const TeamSection = () => {
             >
               <div className="avatar flex items-center justify-center relative">
                 <div className="w-40 border-4 border-base-100 shadow-lg rounded-full relative">
-                  <img src={member.image} className="rounded-full" alt={member.name} />
+                  <img src={member.img} className="rounded-full" alt={member.name} />
                   <div className="w-40 h-40 absolute -inset-1 bg-black bg-opacity-50 opacity-0 hover:opacity-100 transition-opacity rounded-full flex items-center justify-center gap-2">
-                    <a href="#" className="text-base-100 text-xl">
-                      <FaTwitter />
-                    </a>
-                    <a href="#" className="text-base-100 text-xl">
-                      <FaFacebook />
-                    </a>
-                    <a href="#" className="text-base-100 text-xl">
-                      <FaInstagram />
-                    </a>
-                    <a href="#" className="text-base-100 text-xl">
-                      <FaLinkedin />
-                    </a>
+                    {member.social_networks.map((network) => (
+                      <a
+                        key={network.url}
+                        href={network.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-base-100 text-xl"
+                      >
+                        <IconFa iconName={network.social_network.icon} />
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -73,6 +48,9 @@ const TeamSection = () => {
       </section>
     </>
   );
+};
+TeamSection.propTypes = {
+  teamMembers: PropType.array.isRequired,
 };
 
 export default TeamSection;

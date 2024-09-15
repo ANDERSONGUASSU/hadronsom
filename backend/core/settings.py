@@ -52,11 +52,14 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    "apps.about_page",
     "apps.home_page",
     "apps.icons",
     "apps.packages",
     "apps.products",
     "apps.reviews",
+    "apps.company_profile",
+    "apps.email_sending",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
