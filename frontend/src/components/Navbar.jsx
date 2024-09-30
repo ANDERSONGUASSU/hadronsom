@@ -41,12 +41,22 @@ const Navbar = () => {
 const DesktopMenu = memo(() => {
   return (
     <div className="hidden lg:flex">
-      <ul className="menu menu-horizontal px-1">
-        <NavItem to={routes.home}>Home</NavItem>
-        <NavItem to={routes.productsPage}>Produtos</NavItem>
-        <NavItem to={routes.packages}>Nossos pacotes</NavItem>
-        <NavItem to={routes.aboutPage}>Sobre nós</NavItem>
-        <NavItem to={routes.contactPage}>Contato</NavItem>
+      <ul className="menu menu-horizontal px-1 gap-4">
+        <Link className="text-base-100 focus:text-primary" to={routes.home}>
+          Home
+        </Link>
+        <Link className="text-base-100 focus:text-primary" to={routes.productsPage}>
+          Produtos
+        </Link>
+        <Link className="text-base-100 focus:text-primary" to={routes.packages}>
+          Nossos pacotes
+        </Link>
+        <Link className="text-base-100 focus:text-primary" to={routes.aboutPage}>
+          Sobre nós
+        </Link>
+        <Link className="text-base-100 focus:text-primary" to={routes.contactPage}>
+          Contato
+        </Link>
       </ul>
     </div>
   );
@@ -54,7 +64,7 @@ const DesktopMenu = memo(() => {
 
 const NavItem = ({ to, children }) => (
   <li>
-    <Link to={to} className="text-base-100 focus:text-primary">
+    <Link to={to} className="focus:text-primary">
       {children}
     </Link>
   </li>

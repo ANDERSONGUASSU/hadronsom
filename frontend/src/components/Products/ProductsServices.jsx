@@ -3,7 +3,7 @@ import SectionTitle from "components/SectionTitle";
 import Sidebar from "./SideBar";
 import Cards from "./Cards";
 import List from "./List";
-import Search from "./SearchSection";
+import SearchInput from "./SearchSection";
 import { Link } from "react-router-dom";
 
 const ProductsServices = () => {
@@ -50,7 +50,7 @@ const ProductsServices = () => {
         </div>
         <SectionTitle title="Produtos" subtitle="" />
 
-        <Search
+        <SearchInput
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           viewMode={viewMode}

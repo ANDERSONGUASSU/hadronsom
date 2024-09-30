@@ -7,19 +7,19 @@ const Footer = () => {
   return (
     <footer className="footer footer-center bg-primary-content text-base-content lg:p-10  ssm:p-2 mt-auto">
       <nav className="grid grid-flow-col gap-4 text-base-100">
-        <Link to={routes.home} className="link link-hover">
+        <Link to={routes.home} className="hover:text-primary">
           Home
         </Link>
-        <Link to={routes.productsServicesPage} className="link link-hover">
-          Produtos & Serviços
+        <Link to={routes.productsPage} className="hover:text-primary">
+          Produtos
         </Link>
-        <Link to={routes.packages} className="link link-hover">
+        <Link to={routes.packages} className="hover:text-primary">
           Nossos pacotes
         </Link>
-        <Link to={routes.aboutPage} className="link link-hover">
+        <Link to={routes.aboutPage} className="hover:text-primary">
           Sobre nós
         </Link>
-        <Link to={routes.contactPage} className="link link-hover">
+        <Link to={routes.contactPage} className="hover:text-primary">
           Contato
         </Link>
       </nav>

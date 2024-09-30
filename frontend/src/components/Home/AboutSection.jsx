@@ -48,7 +48,6 @@ const AboutSection = () => {
               </>
             }
           />
-
           <div className="container grid md:grid-cols-3">
             <AboutSectionInfo
               title={aboutData.title_info}

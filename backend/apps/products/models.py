@@ -63,6 +63,9 @@ class Products(models.Model):
         verbose_name="Preço Promocional",
     )
     in_stock = models.BooleanField(default=True, verbose_name="Em estoque?")
+    sold_separately = models.BooleanField(
+        default=True, verbose_name="Vendido Separadamente?"
+    )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Data de Criação")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Data de Atualização")
 

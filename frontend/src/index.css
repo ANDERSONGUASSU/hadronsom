@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import "assets/css/variables.css";
 
+
 body {
     overflow-x: hidden !important;
 }
@@ -69,6 +70,7 @@ body {
 
 .swiper-wrapper {
     height: auto;
+    margin-top: 2rem;
 }
 
 .swiper-pagination {
