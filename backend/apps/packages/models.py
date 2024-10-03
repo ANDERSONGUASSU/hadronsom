@@ -1,12 +1,14 @@
+# backend/apps/packages/modesl.py
+
 from django.db import models
 from imagefield.fields import ImageField
 from ..products.models import Products
 
 
-class Packege(models.Model):
+class Package(models.Model):
     name = models.CharField(max_length=255, verbose_name="Nome do Pacote")
-    products = models.ManyToManyField(Products, verbose_name="Produtos do Pacote")
     description = models.TextField(blank=True, verbose_name="Descrição do Pacote")
+    products = models.ManyToManyField(Products, verbose_name="Produtos do Pacote", through="PackageProduct")
     image = ImageField(
         upload_to="package_images/", verbose_name="Imagem do Pacote",
         blank=True,
@@ -31,3 +33,13 @@ class Packege(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class PackageProduct(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+
+    class Meta:
+        verbose_name = "Produto no Pacote"
+        verbose_name_plural = "Produtos no Pacote"

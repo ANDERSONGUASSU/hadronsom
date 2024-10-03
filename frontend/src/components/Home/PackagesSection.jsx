@@ -1,38 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import SectionTitle from "../SectionTitle";
 import PackagesSectionCard from "./PackagesSectionCard";
-import pacotes from "assets/img/kit (1080 x 1320 px)/pacotes.png";
 
 const PackagesSection = () => {
-  const packages = [
-    {
-      img: pacotes,
-      title: "Pacote 1",
-      coverage: "240m²",
-      description:
-        "Aprimora a potência, amplia a clareza sonora e assegura uma cobertura ideal para bandas completas, incluindo vozes, violão, guitarra e bateria elétrica.",
-    },
-    {
-      img: pacotes,
-      title: "Pacote 2",
-      coverage: "480m²",
-      description:
-        "Aprimora a potência, amplia a clareza sonora e garante uma cobertura ideal para bandas completas, abrangendo vozes, violão, bateria elétrica. Além disso, a divisão das caixas proporcionam uma difusão ampliada do som.",
-    },
-    {
-      img: pacotes,
-      title: "Pacote 3",
-      coverage: "480m²",
-      description:
-        "A divisão das caixas proporciona uma difusão ampliada do som. É ideal para vozes em igrejas",
-    },
-    {
-      img: pacotes,
-      title: "Pacote 4",
-      coverage: "320m²",
-      description: ["Ideal para uso em lojas e mercados."],
-    },
-  ];
+  // State para armazenar os pacotes da API
+  const [packages, setPackages] = useState([]);
+  const [loading, setLoading] = useState(true); // Para indicar carregamento
+  const [error, setError] = useState(null); // Para tratar erros
+
+  // useEffect para buscar os pacotes quando o componente for montado
+  useEffect(() => {
+    // Função para buscar os pacotes da API
+    const fetchPackages = async () => {
+      try {
+        const response = await axios.get("/api/v1/packages/"); // Atualize a URL conforme necessário
+        setPackages(response.data); // Define os pacotes retornados
+      } catch (error) {
+        setError("Erro ao carregar pacotes."); // Define a mensagem de erro se falhar
+      } finally {
+        setLoading(false); // Para parar o indicador de carregamento
+      }
+    };
+
+    fetchPackages(); // Chama a função de fetch
+  }, []);
+
+  if (loading) {
+    return <div>Carregando pacotes...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className="py-8">
@@ -41,12 +41,12 @@ const PackagesSection = () => {
         subtitle={<>Temos os melhores pacotes para atender suas necessidades.</>}
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {packages.map((pkg, index) => (
+        {packages.map((pkg) => (
           <PackagesSectionCard
-            key={index}
-            img={pkg.img}
-            title={pkg.title}
-            coverage={pkg.coverage}
+            key={pkg.id}
+            img={pkg.image} // Acessando a imagem retornada pela API
+            title={pkg.name}
+            coverage={`${pkg.sound_coverage_area}m²`}
             description={pkg.description}
           />
         ))}

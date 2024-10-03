@@ -7,7 +7,7 @@ import { BiSolidRightArrowAlt } from "react-icons/bi";
 const PackagesSectionCard = ({ img, title, coverage, description }) => {
   return (
     <div className="card shadow-xl shadow-primary p-4 m-4 flex flex-col justify-center items-center bg-primary text-base-100">
-      <img src={img} alt={title} className="rounded-lg mb-6 h-44 w-64" />
+      <img src={img} alt={title} className="rounded-lg mb-6 w-full" />
       <h3 className="md:text-4xl ssm:text-3xl font-mono uppercase card-title font-bold mb-10 py-4 text-center">
         {title}
       </h3>

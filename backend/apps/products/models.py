@@ -1,3 +1,4 @@
+# backend/apps/products/models.py
 from django.db import models
 from django.utils.text import slugify
 from imagefield.fields import ImageField
@@ -24,6 +25,16 @@ class Brand(models.Model):
 class Categories(models.Model):
     name = models.CharField(max_length=255, verbose_name="Nome da Categoria")
     slug = models.SlugField(blank=True)
+    img = ImageField(
+        upload_to="category_images/",
+        formats={
+            "thumb": ["default", ("crop", (300, 300))],
+            "carousel": ["default", ("thumbnail", (600, 400))],
+        },
+        auto_add_fields=True,
+        blank=True,
+        verbose_name="Imagem da categoria sem o fundo",
+        )
 
     class Meta:
         ordering = ["name"]
