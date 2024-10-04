@@ -8,6 +8,7 @@ import Loading from "components/Loading";
 import AboutPage from "pages/AboutPage";
 import ProductsPage from "pages/ProductsPage";
 import ProductDetailPage from "pages/ProductDetailPage";
+import PackagesPage from "pages/PackagesPage";
 import "./App.css";
 import FloatingWhatsAppButton from "components/FloatingWhatsAppButton";
 import ProductReviewPage from "pages/ProductReviewPage";
@@ -37,6 +38,7 @@ const App = () => {
             <Route path={routes.productsPage} element={<ProductsPage />} />
             <Route path={routes.productDetailPage} element={<ProductDetailPage />} />
             <Route path={routes.productReviewPage} element={<ProductReviewPage />} />
+            <Route path={routes.packagesPage} element={<PackagesPage />} />
             <Route path={routes.aboutPage} element={<AboutPage />} />
             <Route path={routes.contactPage} element={<ContactPage />} />
           </Routes>

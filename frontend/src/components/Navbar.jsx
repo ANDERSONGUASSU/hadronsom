@@ -48,7 +48,7 @@ const DesktopMenu = memo(() => {
         <Link className="text-base-100 focus:text-primary" to={routes.productsPage}>
           Produtos
         </Link>
-        <Link className="text-base-100 focus:text-primary" to={routes.packages}>
+        <Link className="text-base-100 focus:text-primary" to={routes.packagesPage}>
           Nossos pacotes
         </Link>
         <Link className="text-base-100 focus:text-primary" to={routes.aboutPage}>
@@ -87,7 +87,7 @@ const DropdownMenu = memo(() => {
       >
         <NavItem to={routes.home}>Home</NavItem>
         <NavItem to={routes.productsPage}>Produtos</NavItem>
-        <NavItem to={routes.packages}>Nossos pacotes</NavItem>
+        <NavItem to={routes.packagesPage}>Nossos pacotes</NavItem>
         <NavItem to={routes.aboutPage}>Sobre nós</NavItem>
         <NavItem to={routes.contactPage}>Contato</NavItem>
       </ul>

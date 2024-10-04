@@ -13,7 +13,7 @@ const Footer = () => {
         <Link to={routes.productsPage} className="hover:text-primary">
           Produtos
         </Link>
-        <Link to={routes.packages} className="hover:text-primary">
+        <Link to={routes.packagesPage} className="hover:text-primary">
           Nossos pacotes
         </Link>
         <Link to={routes.aboutPage} className="hover:text-primary">

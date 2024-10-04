@@ -44,7 +44,7 @@ const PackagesSection = () => {
         {packages.map((pkg) => (
           <PackagesSectionCard
             key={pkg.id}
-            img={pkg.image} // Acessando a imagem retornada pela API
+            img={pkg.image}
             title={pkg.name}
             coverage={`${pkg.sound_coverage_area}m²`}
             description={pkg.description}
