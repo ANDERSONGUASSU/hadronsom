@@ -3,6 +3,8 @@ from django.db import models
 from django.utils.text import slugify
 from imagefield.fields import ImageField
 from colorfield.fields import ColorField
+from django.db.models.signals import pre_save
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Brand(models.Model):
@@ -34,7 +36,7 @@ class Categories(models.Model):
         auto_add_fields=True,
         blank=True,
         verbose_name="Imagem da categoria sem o fundo",
-        )
+    )
 
     class Meta:
         ordering = ["name"]
@@ -66,6 +68,15 @@ class Products(models.Model):
     )
     price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name="Preço")
     on_sale = models.BooleanField(default=False, verbose_name="Em promoção?")
+    discount_percentage = models.PositiveIntegerField(
+        default=0,
+        validators=[
+            MinValueValidator(0),
+            MaxValueValidator(100),
+        ],
+        verbose_name=("% de Desconto"),
+        help_text="Insira o desconto em porcentagem (0-100).",
+    )
     sale_price = models.DecimalField(
         max_digits=8,
         decimal_places=2,
@@ -92,6 +103,16 @@ class Products(models.Model):
         if self.on_sale and self.sale_price >= self.price:
             raise ValueError("O preço promocional deve ser menor que o preço normal.")
         super().save(*args, **kwargs)
+
+
+def calculate_sale_price(sender, instance, **kwargs):
+    if instance.on_sale:
+        instance.sale_price = float(instance.price) * (1 - float(instance.discount_percentage) / 100)
+    else:
+        instance.sale_price = None
+
+
+pre_save.connect(calculate_sale_price, sender=Products)
 
 
 class Color(models.Model):
