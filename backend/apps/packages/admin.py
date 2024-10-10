@@ -21,7 +21,8 @@ class PackegeAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ('Informações Principais', {
-            'fields': ('name', 'description', 'image', 'price', 'featured')
+            'fields': ('name', 'description', 'image', 'price', 'on_sale',
+                       'discount_percentage', 'sale_price', 'featured')
         }),
         ('Cobertura de Som', {
             'fields': ('has_sound_coverage', 'sound_coverage_area'),

@@ -25,5 +25,5 @@ class PackegeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Package
-        fields = ['id', 'name', 'description', 'image', 'price', 'created_at', 'updated_at',
-                  'has_sound_coverage', 'sound_coverage_area', 'featured', 'products']
+        fields = ['id', 'name', 'description', 'image', 'price', 'on_sale', 'discount_percentage', 'sale_price',
+                  'created_at', 'updated_at', 'has_sound_coverage', 'sound_coverage_area', 'featured', 'products']
